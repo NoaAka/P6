@@ -27,16 +27,28 @@ void loop() {
   //Serial.print("Sensor 0 = ");
   //Serial.println(sen0Val);
   //Serial.print("Sensor 1 = ");
-  //Serial.println(sen1Val);
+  Serial.println(sen1Val);
   //Serial.print("Sensor 2 = ");
   //Serial.println(sen2Val);
   //Serial.print("Sensor 3 = ");
   //Serial.println(sen3Val);
-  Serial.print("Sensor 4 = ");
-  Serial.println(sen4Val);
-  Serial.print("Sensor 5 = ");
-  Serial.println(sen5Val);
-  
+  //Serial.print("Sensor 4 = ");
+  //Serial.println(sen4Val);
+  //Serial.print("Sensor 5 = ");
+  //Serial.println(sen5Val);
+
+  if(sen4Val>sen5Val){
+    Serial.println("Left");
+  }
+  if(sen5Val>sen4Val){
+    Serial.println("Right");
+  }
+  if(sen0Val>150){
+    Serial.println("Shoot");
+  }
+  if(sen1Val>130){
+    Serial.println("Up");
+  }
   Serial.println();
 
   delay(200);
