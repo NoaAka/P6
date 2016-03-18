@@ -27,7 +27,7 @@ void loop() {
   //Serial.print("Sensor 0 = ");
   //Serial.println(sen0Val);
   //Serial.print("Sensor 1 = ");
-  Serial.println(sen1Val);
+  //Serial.println(sen1Val);
   //Serial.print("Sensor 2 = ");
   //Serial.println(sen2Val);
   //Serial.print("Sensor 3 = ");
