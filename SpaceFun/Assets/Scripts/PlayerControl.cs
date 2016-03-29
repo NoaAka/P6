@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour {
 	float rotH;
 	float rotV;
 
+	public bool shouldFire = true;
+
 	Vector3 movement;
 	Vector3 targetDir;
 	Quaternion targetRot;
@@ -30,7 +32,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update()
 	{
 		//Fire
-		if ((input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) && Time.time > nextFire) {
+		if ((input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) && Time.time > nextFire && shouldFire) {
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 

@@ -14,13 +14,6 @@ public class InputControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*
-		Debug.Log ("LH: " + Input.GetAxis ("Horizontal"));
-		Debug.Log ("LV: " + Input.GetAxis ("Vertical"));
-		Debug.Log ("RH: " + Input.GetAxis ("PS4_RightAnalogHorizontal"));
-		Debug.Log ("RV: " + Input.GetAxis ("PS4_RightAnalogVertical"));
-		*/
-
 		//Toggle input method
 		// 0=Keyboard
 		// 1=Xbox controller
@@ -38,10 +31,9 @@ public class InputControl : MonoBehaviour {
 				Debug.Log ("Xbox Controller is now active input device");
 				break;
 			}
-
-
 		}
 
+		//Assigning input reads to variables
 		LH = Input.GetAxis ("Horizontal");
 		LV = Input.GetAxis ("Vertical");
 		if (inputDevice == 0) {
@@ -57,9 +49,7 @@ public class InputControl : MonoBehaviour {
 			RB = Input.GetAxis ("Xbox_RBumper");
 		}
 
-
-
-
+		//Rounding near dead input values to dead
 		if (LH < 0.01f && LH > -0.01f) {
 			LH = 0.0f;
 		}
@@ -78,14 +68,5 @@ public class InputControl : MonoBehaviour {
 		Debug.Log ("RH: " + RH);
 		Debug.Log ("RV: " + RV);
 
-		//Debug.Log (LV);
-		/*
-
-		*/
-		//R1
-		if (Input.GetKey ("joystick button 4") == true) {
-			//Debug.Log ("Click, ho");
-			//masterBus.Volume -= 0.1f;
-		}
 	}
 }
