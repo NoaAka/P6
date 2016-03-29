@@ -96,7 +96,7 @@ GameObject:
   - 114: {fileID: 265748431}
   m_Layer: 0
   m_Name: InputControl
-  m_TagString: Untagged
+  m_TagString: InputControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   turnSmooth: 15
   shot: {fileID: 176024, guid: ed7face614a2b74429efee015f2ce15a, type: 2}
   shotSpawn: {fileID: 842572416}
-  fireRate: 1
+  fireRate: 0.2
 --- !u!54 &1566574266
 Rigidbody:
   m_ObjectHideFlags: 0

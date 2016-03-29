@@ -24,7 +24,7 @@ public class PlayerControl : MonoBehaviour {
 	float nextFire = 0;
 
 	void Start () {
-		input = GameObject.Find ("InputControl").GetComponent<InputControl> ();
+		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
 	}
 
 	void Update()
@@ -50,6 +50,9 @@ public class PlayerControl : MonoBehaviour {
 		targetDir = new Vector3 (rotH, 0.0f, -rotV);
 		targetRot = Quaternion.LookRotation (targetDir, Vector3.up);
 		finalRot = Quaternion.Lerp (rb.rotation, targetRot, turnSmooth * Time.deltaTime);
-		rb.MoveRotation (finalRot);
+		if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
+			rb.MoveRotation (finalRot);
+		}
+
 	}
 }
