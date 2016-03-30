@@ -14,7 +14,7 @@ public class Charge : MonoBehaviour {
 	
 	void Update () {
 		//Debug.Log (charge);
-		charge++;
+		//charge++;
 		if (charge > cap) {
 			Debug.Log ("Boom!");
 			Instantiate(explosion, boomSpawn.position, boomSpawn.rotation);
