@@ -62,11 +62,11 @@ public class InputControl : MonoBehaviour {
 		if (RV < 0.01f && RV > -0.01f) {
 			RV = 0.0f;
 		}
-
+		/*
 		Debug.Log ("LH: " + LH);
 		Debug.Log ("LV: " + LV);
 		Debug.Log ("RH: " + RH);
 		Debug.Log ("RV: " + RV);
-
+		*/
 	}
 }

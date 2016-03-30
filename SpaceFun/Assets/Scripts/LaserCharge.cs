@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Laser : MonoBehaviour {
+public class LaserCharge : MonoBehaviour {
 
 	private InputControl input;
 	LineRenderer line;
@@ -24,6 +24,7 @@ public class Laser : MonoBehaviour {
 			Debug.Log ("Fire!");
 			StopCoroutine ("FireLaser");
 			StartCoroutine ("FireLaser");
+
 		}
 	}
 
@@ -38,8 +39,9 @@ public class Laser : MonoBehaviour {
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
 				line.SetPosition(1, hit.point);
-				if(hit.rigidbody){
-					hit.rigidbody.AddForceAtPosition(transform.forward * force, hit.point);
+				if(hit.collider.tag == "Enemy"){
+					Debug.Log ("Hit!");
+					hit.collider.gameObject.GetComponent<Charge>().charge++;
 				}
 			}
 			else{

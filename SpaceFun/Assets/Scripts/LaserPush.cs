@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Laser : MonoBehaviour {
+public class LaserPush : MonoBehaviour {
 
 	private InputControl input;
 	LineRenderer line;

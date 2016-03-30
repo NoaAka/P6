@@ -35,7 +35,9 @@ public class PlayerControl : MonoBehaviour {
 		if ((input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) && Time.time > nextFire && shouldFire) {
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
-
+			rb.velocity = new Vector3 (0f, 0f, 0f);
+		} else if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
+			rb.velocity = new Vector3 (0f, 0f, 0f);
 		}
 	}
 
@@ -50,9 +52,9 @@ public class PlayerControl : MonoBehaviour {
 		rotH = input.RH;
 		rotV = input.RV;
 		targetDir = new Vector3 (rotH, 0.0f, -rotV);
-		targetRot = Quaternion.LookRotation (targetDir, Vector3.up);
-		finalRot = Quaternion.Lerp (rb.rotation, targetRot, turnSmooth * Time.deltaTime);
 		if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
+			targetRot = Quaternion.LookRotation (targetDir, Vector3.up);
+			finalRot = Quaternion.Lerp (rb.rotation, targetRot, turnSmooth * Time.deltaTime);
 			rb.MoveRotation (finalRot);
 		}
 
