@@ -40,7 +40,14 @@ public class InputControl : MonoBehaviour {
 			RH = Input.GetAxis ("Keyboard_J+L");
 			RV = Input.GetAxis ("Keyboard_K+I");
 			//RH = Input.GetAxis ("Keyboard_J+L");
-			//RH = Input.GetAxis ("Keyboard_J+L");
+			if(Input.GetKey("space")){
+				Debug.Log ("Space");
+				RB=1.0f;
+			}
+			else{
+				RB=0f;
+			}
+
 		}
 		if (inputDevice == 1) {
 			RH = Input.GetAxis ("Xbox_RAnalogH");
