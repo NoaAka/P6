@@ -12,12 +12,14 @@ public class LaserWheel : MonoBehaviour {
 	public int masterForce = 5;
 	public bool masterShouldFire = true;
 	public GameObject left, right, front, back;
+	public GameObject player;
 	
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
 	}
 	
 	void FixedUpdate () {
+		this.transform.position = player.transform.position;
 		this.transform.Rotate (0, Time.deltaTime * rotSpeed, 0);
 
 		left.GetComponent<LaserWheelModule>().length = masterLength;
@@ -35,7 +37,7 @@ public class LaserWheel : MonoBehaviour {
 		front.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 		back.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 
-		if ((input.RB > 0.2) && masterShouldFire) {
+		if ((input.RS > 0.2) && masterShouldFire) {
 			Debug.Log ("Fire!");
 			left.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");
 			right.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");

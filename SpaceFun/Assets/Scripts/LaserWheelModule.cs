@@ -21,7 +21,7 @@ public class LaserWheelModule : MonoBehaviour {
 	
 	IEnumerator FireLaser(){
 		line.enabled = true;
-		while ((input.RB > 0.2) && shouldFire) {
+		while ((input.RS > 0.2) && shouldFire) {
 			Ray ray = new Ray(transform.position, transform.forward);
 			RaycastHit hit;
 			

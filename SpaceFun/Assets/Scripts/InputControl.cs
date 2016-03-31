@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InputControl : MonoBehaviour {
 
-	public float LV, LH, RV, RH, LB, RB;
+	public float LV, LH, RV, RH, LS, RS;
 	public int inputDevice = 0;
 	float delay = 0.0f;
 
@@ -42,18 +42,19 @@ public class InputControl : MonoBehaviour {
 			//RH = Input.GetAxis ("Keyboard_J+L");
 			if(Input.GetKey("space")){
 				Debug.Log ("Space");
-				RB=1.0f;
+				RS=1.0f;
 			}
 			else{
-				RB=0f;
+				RS=0f;
 			}
 
 		}
 		if (inputDevice == 1) {
 			RH = Input.GetAxis ("Xbox_RAnalogH");
 			RV = Input.GetAxis ("Xbox_RAnalogV");
-			LB = Input.GetAxis ("Xbox_LBumper");
-			RB = Input.GetAxis ("Xbox_RBumper");
+			LS = Input.GetAxis ("Xbox_LShoulder");
+			RS = Input.GetAxis ("Xbox_RShoulder");
+			Debug.Log (RS);
 		}
 
 		//Rounding near dead input values to dead
