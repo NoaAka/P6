@@ -41,7 +41,7 @@ public class InputControl : MonoBehaviour {
 			RV = Input.GetAxis ("Keyboard_K+I");
 			//RH = Input.GetAxis ("Keyboard_J+L");
 			if(Input.GetKey("space")){
-				Debug.Log ("Space");
+				//Debug.Log ("Space");
 				RS=1.0f;
 			}
 			else{
@@ -54,7 +54,7 @@ public class InputControl : MonoBehaviour {
 			RV = Input.GetAxis ("Xbox_RAnalogV");
 			LS = Input.GetAxis ("Xbox_LShoulder");
 			RS = Input.GetAxis ("Xbox_RShoulder");
-			Debug.Log (RS);
+			//Debug.Log (RS);
 		}
 
 		//Rounding near dead input values to dead

@@ -9,7 +9,7 @@ public class LaserCharge : MonoBehaviour {
 	private InputControl input;
 	LineRenderer line;
 	public int length = 100;
-	public int force = 5;
+	public int damage = 5;
 	public bool shouldFire = true;
 
 	void Start () {
@@ -41,7 +41,9 @@ public class LaserCharge : MonoBehaviour {
 				line.SetPosition(1, hit.point);
 				if(hit.collider.tag == "Enemy"){
 					Debug.Log ("Hit!");
-					hit.collider.gameObject.GetComponent<Charge>().charge++;
+					hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
+					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;
+					//hit.collider.gameObject.GetComponent<Enemy>().charge+=damage;
 				}
 			}
 			else{
