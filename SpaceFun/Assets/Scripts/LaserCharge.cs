@@ -45,12 +45,16 @@ public class LaserCharge : MonoBehaviour {
 					Debug.Log ("Hit!");
 					switch (hit.collider.name){
 					case "EnemyDrone(Clone)":
-						Debug.Log ("Dron Hit");
+						Debug.Log ("Drone Hit");
 						hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
 						break;
 					case "EnemyWall(Clone)":
 						Debug.Log ("Wall Hit");
 						hit.collider.gameObject.GetComponent<EnemyWall>().charge+=damage;
+						break;
+					case "EnemyHugger(Clone)":
+						Debug.Log ("Hugger Hit");
+						hit.collider.gameObject.GetComponent<EnemyHugger>().charge+=damage;
 						break;
 					}
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;

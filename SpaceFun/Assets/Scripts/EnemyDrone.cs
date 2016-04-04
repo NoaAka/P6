@@ -3,7 +3,6 @@ using System.Collections;
 
 public class EnemyDrone : Enemy {
 
-	public float speed = 2f;
 
 	void Start () {
 		cap = 500;

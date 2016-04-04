@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour {
 	public float fireRate = 1f;
 	float nextFire = 0;
 	public GameObject God;
+	public float speed = 2f;
+	public float rotSpeed = 5f;
 
 	void Start () {
 		player = GameObject.FindWithTag ("Player");
@@ -44,7 +46,7 @@ public class Enemy : MonoBehaviour {
 
 	public void Aim (GameObject target){
 		//var dir = target.transform.position - transform.position;
-		Debug.Log (target.transform);
+		//Debug.Log (target.transform);
 		transform.LookAt (target.transform);
 	}
 
@@ -53,5 +55,13 @@ public class Enemy : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 		} 
+	}
+
+	public void Follow (GameObject target){
+		//Rotate
+		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.transform.position - transform.position), rotSpeed * Time.deltaTime);
+
+		//Move
+		transform.position += transform.forward * speed * Time.deltaTime;
 	}
 }

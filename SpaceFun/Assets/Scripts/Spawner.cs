@@ -5,6 +5,7 @@ public class Spawner : MonoBehaviour {
 
 	public GameObject drone;
 	public GameObject wall;
+	public GameObject hugger;
 	public Vector3 spawnValues;
 	Vector3 spawnPosition;
 	public bool shouldSpawn = true;
@@ -23,11 +24,14 @@ public class Spawner : MonoBehaviour {
 	void FixedUpdate () {
 		if (counter < God.GetComponent<God> ().intensity) {
 			d100 = Random.Range(1, 100);
-			if(d100 > 40){
+			if(d100 > 40 && d100 < 60){
 				Spawn (drone);
 			}
 			else if(d100 < 41){
 				Spawn (wall);
+			}
+			else if(d100 > 59){
+				Spawn (hugger);
 			}
 			counter = 1000;
 		}

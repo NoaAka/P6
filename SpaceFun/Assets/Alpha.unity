@@ -186,6 +186,8 @@ MonoBehaviour:
   playerTrans: {fileID: 0}
   fireRate: 1
   God: {fileID: 0}
+  speed: 2
+  rotSpeed: 5
 --- !u!1001 &203617490
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,6 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drone: {fileID: 197446, guid: ba08676247c348748b7c87d103546543, type: 2}
   wall: {fileID: 175204, guid: 23642a1c4c9b51046bef9f86af0b86e7, type: 2}
+  hugger: {fileID: 169562, guid: b213681d75fce2649899e490c9465726, type: 2}
   spawnValues: {x: 0, y: 0, z: 0}
   shouldSpawn: 1
   God: {fileID: 641613249}
