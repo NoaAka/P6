@@ -4,14 +4,16 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	public GameObject drone;
-	public GameObject fighter;
+	public GameObject wall;
 	public Vector3 spawnValues;
 	Vector3 spawnPosition;
+	public bool shouldSpawn = true;
 
 	//Intensity controls
 	public GameObject God;
 	int counter;
 	public int spawnCount;
+	int d100;
 
 	void Start () {
 		God = GameObject.FindWithTag ("GameController");
@@ -20,17 +22,26 @@ public class Spawner : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if (counter < God.GetComponent<God> ().intensity) {
-			Spawn(drone);
+			d100 = Random.Range(1, 100);
+			if(d100 > 40){
+				Spawn (drone);
+			}
+			else if(d100 < 41){
+				Spawn (wall);
+			}
 			counter = 1000;
 		}
 		counter--;
 	}
 
 	void Spawn (GameObject expectedSpawn){
-		spawnCount++;
-		//Debug.Log ("Spawning drone #"+spawnCount);
-		spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-		Quaternion spawnRotation = Quaternion.identity;
-		Instantiate (expectedSpawn, spawnPosition, spawnRotation);
+		if (shouldSpawn) {
+			spawnCount++;
+			//Debug.Log ("Spawning drone #"+spawnCount);
+			spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+			Quaternion spawnRotation = Quaternion.identity;
+			Instantiate (expectedSpawn, spawnPosition, spawnRotation);
+		}
+
 	}
 }

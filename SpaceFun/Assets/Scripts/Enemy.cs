@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
@@ -15,33 +15,37 @@ public class Enemy : MonoBehaviour {
 	public bool shouldFire = true;
 	public GameObject shot;
 	public Transform shotSpawn;
+	public Transform playerTrans;
 	public float fireRate = 1f;
 	float nextFire = 0;
+	public GameObject God;
 
 	void Start () {
-		 
+		player = GameObject.FindWithTag ("Player");
+		God = GameObject.FindWithTag ("GameController");
+
 	}
 	
 	void Update () {
-		player = GameObject.FindWithTag ("Player");
 
 
 	}
 
 	public void Death (){
-		Debug.Log ("Blop");
+		//Debug.Log ("Blop");
 		//Death
 		if (charge > cap) {
 			Debug.Log ("Boom!");
+			God.GetComponent<God> ().intensity+=value;
 			Instantiate(explosion, this.transform.position, this.transform.rotation);
 			Destroy(this.gameObject);
 		}
 	}
 
 	public void Aim (GameObject target){
-		var dir = target.transform.position - transform.position;
-		transform.LookAt (target.transform.position);
-		Debug.Log (target.transform.position);
+		//var dir = target.transform.position - transform.position;
+		Debug.Log (target.transform);
+		transform.LookAt (target.transform);
 	}
 
 	public void Fire(){

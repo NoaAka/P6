@@ -289,7 +289,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 132750, guid: 45cb45963c264144f8a799464d772150, type: 2}
   shouldFire: 1
-  shot: {fileID: 176024, guid: ed7face614a2b74429efee015f2ce15a, type: 2}
+  shot: {fileID: 120548, guid: ed7face614a2b74429efee015f2ce15a, type: 2}
   shotSpawn: {fileID: 432810}
   fireRate: 1
   speed: 2
@@ -329,6 +329,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 132750, guid: 45cb45963c264144f8a799464d772150, type: 2}
+    - target: {fileID: 0}
+      propertyPath: shot
+      value: 
+      objectReference: {fileID: 120548, guid: ed7face614a2b74429efee015f2ce15a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197446}

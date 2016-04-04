@@ -6,6 +6,9 @@ TagManager:
   tags:
   - InputControl
   - Enemy
+  - Player
+  - EnemyBeam
+  - PlayerBeam
   layers:
   - Default
   - TransparentFX
