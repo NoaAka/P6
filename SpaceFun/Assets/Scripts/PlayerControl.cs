@@ -59,4 +59,8 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 	}
+
+	void onCollisionEnter(Collision collision){
+		Debug.Log (collision.gameObject.tag);
+	}
 }
