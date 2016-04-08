@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour {
 				Spawn (wall);
 			}
 			else if(d100 > 59){
-				Spawn (wall);
+				Spawn (hugger);
 			}
 			counter = 1000;
 		}
