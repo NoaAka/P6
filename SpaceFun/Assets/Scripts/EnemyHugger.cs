@@ -10,8 +10,9 @@ public class EnemyHugger : Enemy {
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = -transform.forward;
 		
-		God = GameObject.FindWithTag ("GameController");
+		god = GameObject.FindWithTag ("GameController");
 		player = GameObject.FindWithTag ("Player");
+		scoreText = GameObject.Find ("Score");
 	}
 	
 	void Update () {

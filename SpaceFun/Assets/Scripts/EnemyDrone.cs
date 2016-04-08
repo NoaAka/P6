@@ -10,7 +10,8 @@ public class EnemyDrone : Enemy {
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = -transform.forward;
 		
-		God = GameObject.FindWithTag ("GameController");
+		god = GameObject.FindWithTag ("GameController");
+		scoreText = GameObject.Find ("Score");
 
 	}
 	

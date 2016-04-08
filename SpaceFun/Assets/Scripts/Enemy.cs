@@ -18,14 +18,15 @@ public class Enemy : MonoBehaviour {
 	public Transform playerTrans;
 	public float fireRate = 1f;
 	float nextFire = 0;
-	public GameObject God;
+	public GameObject god;
+	public GameObject scoreText;
 	public float speed = 2f;
 	public float rotSpeed = 5f;
 
 	void Start () {
 		player = GameObject.FindWithTag ("Player");
-		God = GameObject.FindWithTag ("GameController");
-
+		god = GameObject.FindWithTag ("GameController");
+		scoreText = GameObject.Find ("Score");
 	}
 	
 	void Update () {
@@ -38,7 +39,8 @@ public class Enemy : MonoBehaviour {
 		//Death
 		if (charge > cap) {
 			Debug.Log ("Boom!");
-			God.GetComponent<God> ().intensity+=value;
+			god.GetComponent<God> ().intensity+=value;
+			scoreText.GetComponent<Score> ().AddPoints (value);
 			Instantiate(explosion, this.transform.position, this.transform.rotation);
 			Destroy(this.gameObject);
 		}
