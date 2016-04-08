@@ -57,7 +57,12 @@ public class LaserCharge : MonoBehaviour {
 						Debug.Log ("Hugger Hit");
 						hit.collider.gameObject.GetComponent<EnemyHugger>().charge+=damage;
 						break;
+					case "Bolt(Clone)":
+						Debug.Log ("Bolt Hit");
+						hit.collider.gameObject.GetComponent<EnemyBolt>().charge+=damage;
+						break;
 					}
+
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;
 
 				}

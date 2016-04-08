@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
 	public float rotSpeed = 5f;
 
 	protected void Start () {
+		rb = GetComponent<Rigidbody> ();
 		player = GameObject.FindWithTag ("Player");
 		intensityText = GameObject.Find ("Intensity");
 		scoreText = GameObject.Find ("Score");
