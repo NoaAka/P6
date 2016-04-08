@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour {
 		rotH = input.RH;
 		rotV = input.RV;
 		targetDir = new Vector3 (rotH, 0.0f, -rotV);
-		if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
+        if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
 			targetRot = Quaternion.LookRotation (targetDir, Vector3.up);
 			finalRot = Quaternion.Lerp (rb.rotation, targetRot, turnSmooth * Time.deltaTime);
 			rb.MoveRotation (finalRot);
