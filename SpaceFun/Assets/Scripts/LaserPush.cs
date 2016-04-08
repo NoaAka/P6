@@ -40,6 +40,7 @@ public class LaserPush : MonoBehaviour {
 				line.SetPosition(1, hit.point);
 				if(hit.rigidbody){
 					hit.rigidbody.AddForceAtPosition(transform.forward * force, hit.point);
+					//hit.rigidbody.AddForce (-transform.forward);
 				}
 			}
 			else{

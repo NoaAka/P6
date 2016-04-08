@@ -217,10 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb36fc9c71bcfd341aa086926def00fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 0
-  cap: 100
-  explosion: {fileID: 177726, guid: 07b811b1ae8fdd642ae2ccf56d3cdcde, type: 2}
-  boomSpawn: {fileID: 1654277447}
 --- !u!114 &85066291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +242,8 @@ MonoBehaviour:
   shotSpawn: {fileID: 0}
   playerTrans: {fileID: 0}
   fireRate: 1
-  God: {fileID: 0}
+  intensityText: {fileID: 0}
+  scoreText: {fileID: 0}
   speed: 2
   rotSpeed: 5
 --- !u!1001 &203617490
@@ -564,7 +561,7 @@ MonoBehaviour:
   hugger: {fileID: 169562, guid: b213681d75fce2649899e490c9465726, type: 2}
   spawnValues: {x: 0, y: 0, z: 0}
   shouldSpawn: 1
-  God: {fileID: 641613249}
+  intensity: {fileID: 0}
   spawnCount: 0
 --- !u!4 &380655132
 Transform:
@@ -1846,6 +1843,7 @@ GameObject:
   - 224: {fileID: 2095671111}
   - 222: {fileID: 2095671114}
   - 114: {fileID: 2095671113}
+  - 114: {fileID: 2095671112}
   m_Layer: 5
   m_Name: Intensity
   m_TagString: Untagged
@@ -1870,6 +1868,18 @@ RectTransform:
   m_AnchoredPosition: {x: 140, y: 57.5}
   m_SizeDelta: {x: 140, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2095671112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095671110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e7c4924d24a4240953718afbad29a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0
 --- !u!114 &2095671113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,7 +1892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.72156864, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

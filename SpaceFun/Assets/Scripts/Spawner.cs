@@ -11,18 +11,18 @@ public class Spawner : MonoBehaviour {
 	public bool shouldSpawn = true;
 
 	//Intensity controls
-	public GameObject God;
+	public GameObject intensity;
 	int counter;
 	public int spawnCount;
 	int d100;
 
 	void Start () {
-		God = GameObject.FindWithTag ("GameController");
+		intensity = GameObject.Find ("Intensity");
 		spawnValues = new Vector3(15f,0f,11f);
 	}
 	
 	void FixedUpdate () {
-		if (counter < God.GetComponent<God> ().intensity) {
+		if (counter < intensity.GetComponent<Intensity> ().intensity) {
 			d100 = Random.Range(1, 100);
 			if(d100 > 40 && d100 < 60){
 				Spawn (drone);

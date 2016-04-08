@@ -10,6 +10,7 @@ public class LaserCharge : MonoBehaviour {
 	LineRenderer line;
 	public int length = 100;
 	public int damage = 5;
+	public int force = 500;
 	public bool shouldFire = true;
 
 	void Start () {
@@ -80,8 +81,9 @@ public class LaserCharge : MonoBehaviour {
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
 				line.SetPosition(1, hit.point);
-				if(hit.collider.tag == "Player"){
+				if(hit.collider.tag == "Player" && hit.rigidbody){
 					Debug.Log ("Boom!");
+					hit.rigidbody.AddForceAtPosition(transform.forward * force, hit.point);
 					//hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;
 					//hit.collider.gameObject.GetComponent<Enemy>().charge+=damage;
