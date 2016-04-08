@@ -358,7 +358,7 @@ MonoBehaviour:
   shotSpawn: {fileID: 0}
   playerTrans: {fileID: 0}
   fireRate: 1
-  god: {fileID: 0}
+  intensityText: {fileID: 0}
   scoreText: {fileID: 0}
   speed: 1
   rotSpeed: 5
@@ -375,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 30
   damage: 5
+  force: 1000
   shouldFire: 1
 --- !u!114 &11494550
 MonoBehaviour:
@@ -389,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 30
   damage: 5
+  force: 1000
   shouldFire: 1
 --- !u!120 &12013830
 LineRenderer:
@@ -490,6 +492,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: force
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

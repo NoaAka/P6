@@ -83,7 +83,7 @@ public class LaserCharge : MonoBehaviour {
 				line.SetPosition(1, hit.point);
 				if(hit.collider.tag == "Player" && hit.rigidbody){
 					Debug.Log ("Boom!");
-					hit.rigidbody.AddForceAtPosition(transform.forward * force, hit.point);
+					hit.rigidbody.AddForceAtPosition(-transform.forward * force, hit.point);
 					//hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;
 					//hit.collider.gameObject.GetComponent<Enemy>().charge+=damage;

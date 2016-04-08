@@ -16,7 +16,7 @@ public class EnemyWall : Enemy {
 	
 	void Update () {
 		Death ();
-		Debug.Log (charge);
+		//Debug.Log (charge);
 
 	}
 }
