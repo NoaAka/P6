@@ -86,7 +86,7 @@ public class LaserCharge : MonoBehaviour {
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
 				line.SetPosition(1, hit.point);
-				if(hit.collider.tag == "Player" && hit.rigidbody){
+				if((hit.collider.tag == "PlayerShip" || hit.collider.tag == "PlayerShield") && hit.rigidbody){
 					Debug.Log ("Boom!");
 					hit.rigidbody.AddForce(-transform.right * force);
 					//hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;

@@ -8,6 +8,7 @@ public class LaserWheelModule : MonoBehaviour {
 	
 	private InputControl input;
 	private LaserWheel master;
+	private PlayerControl player;
 	LineRenderer line;
 	public int length = 100;
 	public int force = 5;
@@ -17,6 +18,7 @@ public class LaserWheelModule : MonoBehaviour {
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
 		master = GameObject.Find ("LaserWheel").GetComponent<LaserWheel> ();
+		player = GameObject.FindWithTag ("Player").GetComponent<PlayerControl> ();
 		line = gameObject.GetComponent<LineRenderer> ();
 		line.enabled = false;
 	}
@@ -26,7 +28,7 @@ public class LaserWheelModule : MonoBehaviour {
 		line.enabled = true;
 
 		//Player's beam
-		while ((input.RS > 0.2) && shouldFire && master.wheelFuel > 0) {
+		while ((input.RS > 0.2) && shouldFire && player.shieldPower > 0) {
 			Ray ray = new Ray (transform.position, transform.forward);
 			RaycastHit hit;
 

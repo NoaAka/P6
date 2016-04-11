@@ -14,10 +14,10 @@ public class LaserWheel : MonoBehaviour {
 	public bool masterShouldFire = true;
 	public GameObject left, right, front, back;
 	public GameObject player;
-	public int wheelFuel = 0;
 	
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
+		player = GameObject.FindWithTag ("Player");
 	}
 	
 	void FixedUpdate () {
@@ -44,9 +44,9 @@ public class LaserWheel : MonoBehaviour {
 		front.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 		back.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 
-		if ((input.RS > 0.2) && masterShouldFire && wheelFuel > 0) {
-			Debug.Log (wheelFuel+" fuel remaining!");
-			wheelFuel--;
+		if ((input.RS > 0.2) && masterShouldFire && player.GetComponent<PlayerControl>().shieldPower > 0) {
+			Debug.Log (player.GetComponent<PlayerControl>().shieldPower+" fuel remaining!");
+			player.GetComponent<PlayerControl>().shieldPower--;
 
 
 			left.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");
