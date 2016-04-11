@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef6b1eb86aabab438604f60f9b55a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 30
+  length: 40
   damage: 5
   force: 700
   shouldFire: 1
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef6b1eb86aabab438604f60f9b55a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 30
+  length: 40
   damage: 5
   force: 700
   shouldFire: 1
@@ -512,6 +512,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.w
       value: -0.00000011520231
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: length
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

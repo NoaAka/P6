@@ -10,9 +10,11 @@ public class LaserWheel : MonoBehaviour {
 	public int rotSpeed = 200;
 	public int masterLength = 7;
 	public int masterForce = 5;
+	public int masterDamage = 40;
 	public bool masterShouldFire = true;
 	public GameObject left, right, front, back;
 	public GameObject player;
+	public int wheelFuel = 0;
 	
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
@@ -32,13 +34,21 @@ public class LaserWheel : MonoBehaviour {
 		front.GetComponent<LaserWheelModule>().force = masterForce;
 		back.GetComponent<LaserWheelModule>().force = masterForce;
 
+		left.GetComponent<LaserWheelModule>().damage = masterDamage;
+		right.GetComponent<LaserWheelModule>().damage = masterDamage;
+		front.GetComponent<LaserWheelModule>().damage = masterDamage;
+		back.GetComponent<LaserWheelModule>().damage = masterDamage;
+
 		left.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 		right.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 		front.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 		back.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 
-		if ((input.RS > 0.2) && masterShouldFire) {
-			Debug.Log ("Fire!");
+		if ((input.RS > 0.2) && masterShouldFire && wheelFuel > 0) {
+			Debug.Log (wheelFuel+" fuel remaining!");
+			wheelFuel--;
+
+
 			left.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");
 			right.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");
 			front.GetComponent<LaserWheelModule>().StopCoroutine ("FireLaser");
