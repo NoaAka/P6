@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyBolt : Enemy {
 
+    public int damage = 10;
 
 
 	new void Start () {

@@ -25,9 +25,36 @@ public class PlayerControl : MonoBehaviour {
 	public float fireRate = 1f;
 	float nextFire = 0;
 
+    //playership
+    private GameObject playerShip;
+
+    //playershield
+    public int shieldPower = 50;
+    private bool shieldActive;
+    private GameObject playerShield;
+
+    private AnimationController animationController;
+
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
-	}
+
+        //playerShip 
+        playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
+
+        //shield 
+        animationController = GetComponentInChildren<AnimationController>();
+        playerShield = GameObject.FindGameObjectWithTag("PlayerShield");
+        if (shieldPower > 0)
+        {
+            ActivateShield();
+
+        }
+        else
+        {
+            DissactivateShield();
+
+        }
+    }
 
 	void Update()
 	{
@@ -39,7 +66,26 @@ public class PlayerControl : MonoBehaviour {
 		} else if (input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) {
 			rb.velocity = new Vector3 (0f, 0f, 0f);
 		}
+
+        //shield or not
+
+        animationController.ShieldLevel(shieldPower);//render shield
+        if(shieldActive && shieldPower < 1)
+        {
+            
+            DissactivateShield();
+            
+        }
+        else if (!shieldActive && shieldPower > 0)
+        {
+            ActivateShield();
+          
+        }
+
+
 	}
+
+
 
 	void FixedUpdate () {
 		//Moving using Left Analog
@@ -60,7 +106,47 @@ public class PlayerControl : MonoBehaviour {
 
 	}
 
-	void onCollisionEnter(Collision collision){
-		Debug.Log (collision.gameObject.tag);
-	}
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.gameObject.tag == ("Pickup"))
+        {
+            print("player collided with pickup");
+            shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy;
+            Destroy(other.transform.parent.gameObject);
+        }
+        else {
+            print("Player Collided with " + other);
+            if (shieldActive)
+            {
+                if (other.gameObject.GetComponent<Damage>() != null)
+                {//should be cached?! check to see if other can give damage.. 
+                    shieldPower -= other.gameObject.GetComponent<Damage>().damage;
+                }
+
+
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                playerShip.SetActive(false);//make new method PlayerDeath() ,time out and restart? 
+            }
+        }
+    }
+    void DissactivateShield() {
+        shieldPower = 0;
+        shieldActive = false;
+        playerShield.GetComponent<CapsuleCollider>().enabled = false;//can be cached?!
+        playerShip.GetComponent<CapsuleCollider>().enabled = true;
+        animationController.TurnOff();
+
+
+    }
+    void ActivateShield() { 
+        shieldActive = true;
+        playerShield.GetComponent<CapsuleCollider>().enabled = true;
+        playerShip.GetComponent<CapsuleCollider>().enabled = false;
+        animationController.TurnOn();
+
+    }
 }

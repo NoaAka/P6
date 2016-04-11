@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - EnemyBeam
   - PlayerBeam
+  - Score
+  - PlayerShield
+  - PlayerShip
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Pickups
   - 
   - 
   - 
