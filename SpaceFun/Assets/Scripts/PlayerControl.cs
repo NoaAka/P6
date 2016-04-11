@@ -115,6 +115,7 @@ public class PlayerControl : MonoBehaviour {
             shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy;
             Destroy(other.transform.parent.gameObject);
         }
+		/*
         else {
             print("Player Collided with " + other);
             if (shieldActive)
@@ -131,7 +132,7 @@ public class PlayerControl : MonoBehaviour {
             {
                 playerShip.SetActive(false);//make new method PlayerDeath() ,time out and restart? 
             }
-        }
+        }*/
     }
     void DissactivateShield() {
         shieldPower = 0;

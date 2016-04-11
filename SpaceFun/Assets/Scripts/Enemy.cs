@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour {
     public GameObject scoreText;
     public float speed = 2f;
     public float rotSpeed = 5f;
+	public int damage = 0;
 
     [Range(0.0f, 1.0f)]
     public float pickupSpawnChance;
@@ -43,13 +44,13 @@ public class Enemy : MonoBehaviour {
 
     }
 
-    public void Death() {
+	public void Death(int points) {
         //Debug.Log ("Blop");
         //Death
         if (charge > cap) {
             Debug.Log("Boom!");
             intensityText.GetComponent<Intensity> ().AddIntensity(value);
-            scoreText.GetComponent<Score> ().AddPoints (value);
+			scoreText.GetComponent<Score> ().AddPoints (points);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             GeneratePickup();
@@ -87,4 +88,5 @@ public class Enemy : MonoBehaviour {
             Instantiate(pickup, new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z), Quaternion.identity);
         }
     }
+
 }

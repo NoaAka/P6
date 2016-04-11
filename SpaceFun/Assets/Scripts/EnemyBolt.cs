@@ -17,6 +17,6 @@ public class EnemyBolt : Enemy {
 	}
 	
 	void Update () {
-		Death ();
+		Death (value);
 	}
 }

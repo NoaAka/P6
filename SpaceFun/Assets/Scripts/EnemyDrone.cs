@@ -14,10 +14,11 @@ public class EnemyDrone : Enemy {
 	}
 	
 	void Update () {
-		Death ();
+		Death (value);
 		//Debug.Log (charge);
 		Aim (player);
 		Fire ();
 
+		rb.velocity = -transform.forward;
 	}
 }
