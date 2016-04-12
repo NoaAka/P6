@@ -19,13 +19,19 @@ public class EnemyHugger : Enemy {
 		Follow (player);
 	}
 
-	void OnCollisionEnter(Collider hit){
-		if (hit.tag == "PlayerShip" || hit.tag == "PlayerShield") {
+	void OnCollisionEnter(Collision hit){
+		Debug.Log (hit.gameObject.tag);
+		if (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player") {
 			Debug.Log ("Testing");
-			if (hit.GetComponent<PlayerControl> ().shieldPower < 0) {
+			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
+				charge = cap+1;
+				Death (0);
 			} else {
-				hit.GetComponent<PlayerControl> ().shieldPower -= damage;
+				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= damage;
+				charge = cap+1;
+				Death (0);
+				Debug.Log ("Damage to " + hit.gameObject.name);
 			}
 		}
 	}
