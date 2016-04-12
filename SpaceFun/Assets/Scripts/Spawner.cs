@@ -25,10 +25,10 @@ public class Spawner : MonoBehaviour {
 		if (counter < intensity.GetComponent<Intensity> ().intensity) {
 			d100 = Random.Range(1, 100);
 			if(d100 > 40 && d100 < 60){
-				Spawn (drone);
+				Spawn (wall);
 			}
 			else if(d100 < 41){
-				Spawn (wall);
+				Spawn (drone);
 			}
 			else if(d100 > 59){
 				Spawn (hugger);

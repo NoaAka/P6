@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
         //Debug.Log ("Blop");
         //Death
         if (charge > cap) {
-            Debug.Log("Boom!");
+            //Debug.Log("Boom!");
             intensityText.GetComponent<Intensity> ().AddIntensity(value);
 			scoreText.GetComponent<Score> ().AddPoints (points);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
@@ -89,10 +89,10 @@ public class Enemy : MonoBehaviour {
         }
     }
 	public void OnCollisionEnter(Collision hit){
-		//Debug.Log (hit.gameObject.tag);
-		//Debug.Log (this.gameObject.name);
+		Debug.Log (hit.gameObject.tag);
+		Debug.Log (this.gameObject.name);
 		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
-			//Debug.Log ("Testing");
+			Debug.Log ("Working: "+this.gameObject.name);
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap+1;

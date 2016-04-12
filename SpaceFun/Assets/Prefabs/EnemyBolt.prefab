@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11435832}
   - 114: {fileID: 11444680}
   m_Layer: 0
-  m_Name: Bolt
+  m_Name: EnemyBolt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &6512856
 BoxCollider:
@@ -117,7 +117,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120548}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -164,6 +164,8 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 5
   damage: 10
+  pickupSpawnChance: 0
+  pickup: {fileID: 0}
 --- !u!114 &11444680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +187,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -195,6 +197,10 @@ Prefab:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 162458, guid: 7279da29bfeedd942a058be592ff8a06, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120548}

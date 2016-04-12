@@ -43,22 +43,22 @@ public class LaserCharge : MonoBehaviour {
 			if(Physics.Raycast (ray, out hit, length)){
 				line.SetPosition(1, hit.point);
 				if(hit.collider.tag == "Enemy"){
-					Debug.Log ("Hit!");
+					//Debug.Log ("Hit!");
 					switch (hit.collider.name){
 					case "EnemyDrone(Clone)":
-						Debug.Log ("Drone Hit");
+						//Debug.Log ("Drone Hit");
 						hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
 						break;
 					case "EnemyWall(Clone)":
-						Debug.Log ("Wall Hit");
+						//Debug.Log ("Wall Hit");
 						hit.collider.gameObject.GetComponent<EnemyWall>().charge+=damage;
 						break;
 					case "EnemyHugger(Clone)":
-						Debug.Log ("Hugger Hit");
+						//Debug.Log ("Hugger Hit");
 						hit.collider.gameObject.GetComponent<EnemyHugger>().charge+=damage;
 						break;
 					case "Bolt(Clone)":
-						Debug.Log ("Bolt Hit");
+						//Debug.Log ("Bolt Hit");
 						hit.collider.gameObject.GetComponent<EnemyBolt>().charge+=damage;
 						break;
 					}
@@ -87,7 +87,7 @@ public class LaserCharge : MonoBehaviour {
 			if(Physics.Raycast (ray, out hit, length)){
 				line.SetPosition(1, hit.point);
 				if((hit.collider.tag == "PlayerShip" || hit.collider.tag == "PlayerShield") && hit.rigidbody){
-					Debug.Log ("Boom!");
+					//Debug.Log ("Boom!");
 					hit.rigidbody.AddForce(-transform.right * force);
 					//hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;

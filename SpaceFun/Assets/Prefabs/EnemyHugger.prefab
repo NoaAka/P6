@@ -455,8 +455,8 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 5
   damage: 0
-  pickupSpawnChance: 0
-  pickup: {fileID: 0}
+  pickupSpawnChance: 0.2
+  pickup: {fileID: 158710, guid: e56f1dea845131b498afe1395d38e65f, type: 2}
 --- !u!135 &13579006
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -491,6 +491,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 158710, guid: e56f1dea845131b498afe1395d38e65f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: pickupSpawnChance
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
