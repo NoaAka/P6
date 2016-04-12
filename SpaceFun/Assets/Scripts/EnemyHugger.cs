@@ -21,7 +21,7 @@ public class EnemyHugger : Enemy {
 
 	void OnCollisionEnter(Collider hit){
 		if (hit.tag == "PlayerShip" || hit.tag == "PlayerShield") {
-			//Debug.Log ("Testing");
+			Debug.Log ("Testing");
 			if (hit.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 			} else {

@@ -19,6 +19,6 @@ public class EnemyDrone : Enemy {
 		Aim (player);
 		Fire ();
 
-		rb.velocity = -transform.forward;
+		rb.velocity = -Vector3.forward;
 	}
 }
