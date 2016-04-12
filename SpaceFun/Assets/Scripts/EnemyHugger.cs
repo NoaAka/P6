@@ -19,20 +19,5 @@ public class EnemyHugger : Enemy {
 		Follow (player);
 	}
 
-	void OnCollisionEnter(Collision hit){
-		Debug.Log (hit.gameObject.tag);
-		if (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player") {
-			Debug.Log ("Testing");
-			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
-				Debug.Log ("Player Lost!");
-				charge = cap+1;
-				Death (0);
-			} else {
-				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= damage;
-				charge = cap+1;
-				Death (0);
-				Debug.Log ("Damage to " + hit.gameObject.name);
-			}
-		}
-	}
+
 }

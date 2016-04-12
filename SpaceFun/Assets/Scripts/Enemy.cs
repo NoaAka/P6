@@ -88,5 +88,22 @@ public class Enemy : MonoBehaviour {
             Instantiate(pickup, new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z), Quaternion.identity);
         }
     }
+	public void OnCollisionEnter(Collision hit){
+		//Debug.Log (hit.gameObject.tag);
+		//Debug.Log (this.gameObject.name);
+		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
+			//Debug.Log ("Testing");
+			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
+				Debug.Log ("Player Lost!");
+				charge = cap+1;
+				Death (0);
+			} else {
+				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= damage;
+				charge = cap+1;
+				Death (0);
+				Debug.Log ("Damage to " + hit.gameObject.name);
+			}
+		}
+	}
 
 }

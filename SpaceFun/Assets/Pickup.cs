@@ -2,11 +2,6 @@
 using System.Collections;
 
 public class Pickup : MonoBehaviour {
-    public int energy = 10;
-
-	
-
-
-
+    public int energy = 100;
 
 }
