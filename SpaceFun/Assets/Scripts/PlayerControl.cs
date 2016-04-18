@@ -111,7 +111,7 @@ public class PlayerControl : MonoBehaviour {
 
         if (other.gameObject.gameObject.tag == ("Pickup"))
         {
-            print("player collided with pickup");
+            //print("Player collided with pickup");
             shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy;
             Destroy(other.transform.parent.gameObject);
         }

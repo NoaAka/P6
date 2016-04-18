@@ -15,7 +15,7 @@ public class EnemyWall : Enemy {
 	}
 	
 	void Update () {
-		Death (value);
+		Death (value, value);
 		//Debug.Log (charge);
 
 		rb.velocity = -transform.forward;

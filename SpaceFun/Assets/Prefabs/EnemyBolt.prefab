@@ -163,7 +163,7 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   speed: 2
   rotSpeed: 5
-  damage: 10
+  damage: 20
   pickupSpawnChance: 0
   pickup: {fileID: 0}
 --- !u!114 &11444680
@@ -200,6 +200,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

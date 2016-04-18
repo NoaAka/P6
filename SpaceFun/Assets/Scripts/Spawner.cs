@@ -12,17 +12,19 @@ public class Spawner : MonoBehaviour {
 
 	//Intensity controls
 	public GameObject intensity;
-	int counter;
+	God god;
+	float counter;
 	public int spawnCount;
 	int d100;
 
 	void Start () {
+		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
 		intensity = GameObject.Find ("Intensity");
 		spawnValues = new Vector3(15f,0f,11f);
 	}
 	
 	void FixedUpdate () {
-		if (counter < intensity.GetComponent<Intensity> ().intensity) {
+		if (counter == 0f) {
 			d100 = Random.Range(1, 100);
 			if(d100 > 40 && d100 < 60){
 				Spawn (wall);
@@ -33,7 +35,7 @@ public class Spawner : MonoBehaviour {
 			else if(d100 > 59){
 				Spawn (hugger);
 			}
-			counter = 1000;
+			counter = god.delay;
 		}
 		counter--;
 	}

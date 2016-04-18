@@ -27,10 +27,12 @@ public class Enemy : MonoBehaviour {
     [Range(0.0f, 1.0f)]
     public float pickupSpawnChance;
     public GameObject pickup;
+	God god;
 
     //private SimpleSpawner simpleSpawner;//JDebug
 
-    protected void Start() {
+	protected void Start() {
+		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
         intensityText = GameObject.Find("Intensity");
@@ -39,17 +41,12 @@ public class Enemy : MonoBehaviour {
         //simpleSpawner = GameObject.Find("SimpleSpawner").GetComponent<SimpleSpawner>();//JDebug
     }
 
-    void Update() {
-
-
-    }
-
-	public void Death(int points) {
+	public void Death(int points, int intensity) {
         //Debug.Log ("Blop");
         //Death
         if (charge > cap) {
             //Debug.Log("Boom!");
-            intensityText.GetComponent<Intensity> ().AddIntensity(value);
+			intensityText.GetComponent<Intensity> ().AddIntensity(intensity);
 			scoreText.GetComponent<Score> ().AddPoints (points);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
@@ -89,19 +86,19 @@ public class Enemy : MonoBehaviour {
         }
     }
 	public void OnCollisionEnter(Collision hit){
-		Debug.Log (hit.gameObject.tag);
-		Debug.Log (this.gameObject.name);
+		//Debug.Log (hit.gameObject.tag);
+		//Debug.Log (this.gameObject.name);
 		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
-			Debug.Log ("Working: "+this.gameObject.name);
+			//Debug.Log ("Working: "+this.gameObject.name);
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap+1;
-				Death (0);
+				Death (0, -value);
 			} else {
 				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= damage;
 				charge = cap+1;
-				Death (0);
-				Debug.Log ("Damage to " + hit.gameObject.name);
+				Death (0, -value);
+				//Debug.Log ("Damage to " + hit.gameObject.name);
 			}
 		}
 	}

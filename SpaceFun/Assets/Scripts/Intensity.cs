@@ -4,23 +4,23 @@ using UnityEngine.UI;
 
 public class Intensity : MonoBehaviour {
 
-	public int intensity;
+	public God god;
 	private Text myText;
 
 	void Start () {
+		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
 		myText = GetComponent<Text>();
 		Reset();
 	}
 	
-	public void AddIntensity (int value){
-		intensity += value;
-		myText.text = "Intensity : "+(intensity-600).ToString();
+	public void AddIntensity (int value) {
+		god.intensity += value;
+		myText.text = "Intensity : "+(god.intensity).ToString();
 
 	}
 
-	public void Reset()
-	{
-		intensity = 600;
-		myText.text = "Intensity : "+(intensity-600).ToString();
+	public void Reset() {
+		god.intensity = 0;
+		myText.text = "Intensity : "+(god.intensity).ToString();
 	}
 }

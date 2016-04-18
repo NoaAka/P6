@@ -6,22 +6,22 @@ public class Score : MonoBehaviour {
 
 	public int score = 0;
 	private Text myText;
+	God god;
 
-	void Start()
-	{
+	void Start() {
+		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
 		myText = GetComponent<Text>();
 		Reset();
 	}
 		
-	public void AddPoints(int points)
-	{
-		score += points;
-		myText.text = "Score : "+ score.ToString();
+	public void AddPoints(int points) {
+		god.score += points;
+		myText.text = "Score : "+ god.score.ToString();
 	}
-	public void Reset()
-	{
-		score = 0;
-		myText.text = "Score : "+score.ToString();
+
+	public void Reset()	{
+		god.score = 0;
+		myText.text = "Score : "+god.score.ToString();
 	}
 
 }
