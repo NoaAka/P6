@@ -13,14 +13,13 @@ public class Intensity : MonoBehaviour {
 		Reset();
 	}
 	
-	public void AddIntensity (int value) {
+	public void AddIntensity (float value) {
 		god.intensity += value;
 		myText.text = "Intensity : "+(god.intensity).ToString();
-
 	}
 
 	public void Reset() {
-		god.intensity = 0;
+		god.intensity = 50;
 		myText.text = "Intensity : "+(god.intensity).ToString();
 	}
 }

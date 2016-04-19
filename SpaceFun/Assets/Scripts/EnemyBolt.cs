@@ -9,7 +9,7 @@ public class EnemyBolt : Enemy {
 		cap = 20;
 		value = 0;
 		speed = 10f;
-		damage = 10;
+		damage = 10f;
 		rb = GetComponent<Rigidbody> ();
 		
 		rb.velocity = transform.forward * speed;

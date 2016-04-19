@@ -12,10 +12,11 @@ public class LaserCharge : MonoBehaviour {
 	public int damage = 5;
 	public int force = 500;
 	public bool shouldFire = true;
+	God god;
 
 	void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
-
+		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
 		line = gameObject.GetComponent<LineRenderer> ();
 		line.enabled = false;
 	}
@@ -85,13 +86,10 @@ public class LaserCharge : MonoBehaviour {
 			
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
-				line.SetPosition(1, hit.point);
 				if((hit.collider.tag == "PlayerShip" || hit.collider.tag == "PlayerShield") && hit.rigidbody){
+					//line.SetPosition(1, hit.point);
 					//Debug.Log ("Boom!");
 					hit.rigidbody.AddForce(-transform.right * force);
-					//hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
-					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;
-					//hit.collider.gameObject.GetComponent<Enemy>().charge+=damage;
 					line.SetPosition(1, ray.GetPoint(length));
 				}
 			}

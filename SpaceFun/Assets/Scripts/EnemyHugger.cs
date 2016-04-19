@@ -8,7 +8,7 @@ public class EnemyHugger : Enemy {
 		base.Start ();
 		cap = 100;
 		value = 20;
-		damage = 30;
+		damage = 30f;
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = -transform.forward;
 	}

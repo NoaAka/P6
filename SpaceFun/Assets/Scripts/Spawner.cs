@@ -20,11 +20,11 @@ public class Spawner : MonoBehaviour {
 	void Start () {
 		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
 		intensity = GameObject.Find ("Intensity");
-		spawnValues = new Vector3(15f,0f,11f);
+		spawnValues = new Vector3(15f,0f,8f);
 	}
 	
 	void FixedUpdate () {
-		if (counter == 0f) {
+		if (counter <= 0f) {
 			d100 = Random.Range(1, 100);
 			if(d100 > 40 && d100 < 60){
 				Spawn (wall);

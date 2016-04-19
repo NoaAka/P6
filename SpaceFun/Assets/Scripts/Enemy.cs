@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
     public GameObject scoreText;
     public float speed = 2f;
     public float rotSpeed = 5f;
-	public int damage = 0;
+	public float damage = 0f;
 
     [Range(0.0f, 1.0f)]
     public float pickupSpawnChance;
@@ -46,7 +46,8 @@ public class Enemy : MonoBehaviour {
         //Death
         if (charge > cap) {
             //Debug.Log("Boom!");
-			intensityText.GetComponent<Intensity> ().AddIntensity(intensity);
+			float intpass = intensity;
+			intensityText.GetComponent<Intensity> ().AddIntensity(intpass*god.revIntMultiplier);
 			scoreText.GetComponent<Score> ().AddPoints (points);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
@@ -92,14 +93,23 @@ public class Enemy : MonoBehaviour {
 			//Debug.Log ("Working: "+this.gameObject.name);
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
-				charge = cap+1;
+				charge = cap + 1;
 				Death (0, -value);
 			} else {
-				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= damage;
-				charge = cap+1;
+				int d = (int) Mathf.Round(damage+damage*god.intMultiplier);
+				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= d;
+				Debug.Log (d+" damage on hit");
+				charge = cap + 1;
 				Death (0, -value);
 				//Debug.Log ("Damage to " + hit.gameObject.name);
 			}
+		} else if (this.gameObject.name == "EnemyBolt(Clone)") {
+			//Makes bolts die when they hit something to prevent them clogging up the field
+			//Issue: They die when fired, due to collision with the drone
+			/*
+			charge = cap + 1;
+			Debug.Log ("Bolt collision");
+			Death (0, -0);*/
 		}
 	}
 

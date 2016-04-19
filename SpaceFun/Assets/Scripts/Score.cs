@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-	public int score = 0;
 	private Text myText;
 	God god;
 
