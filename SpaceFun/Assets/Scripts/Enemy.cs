@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour {
         if (charge > cap) {
             //Debug.Log("Boom!");
 			float intpass = intensity;
-			intensityText.GetComponent<Intensity> ().AddIntensity(intpass*god.revIntMultiplier);
+			intensityText.GetComponent<Intensity> ().AddIntensity(intpass*god.intMultiplier);
 			scoreText.GetComponent<Score> ().AddPoints (points);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);

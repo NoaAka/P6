@@ -86,10 +86,12 @@ public class LaserCharge : MonoBehaviour {
 			
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
-				if((hit.collider.tag == "PlayerShip" || hit.collider.tag == "PlayerShield") && hit.rigidbody){
+				if ((hit.collider.tag == "PlayerShip" || hit.collider.tag == "PlayerShield") && hit.rigidbody) {
 					//line.SetPosition(1, hit.point);
 					//Debug.Log ("Boom!");
-					hit.rigidbody.AddForce(-transform.right * force);
+					hit.rigidbody.AddForce (-transform.right * force);
+					line.SetPosition (1, ray.GetPoint (length));
+				} else {
 					line.SetPosition(1, ray.GetPoint(length));
 				}
 			}
