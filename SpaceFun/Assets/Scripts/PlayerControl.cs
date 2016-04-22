@@ -34,8 +34,10 @@ public class PlayerControl : MonoBehaviour {
     private GameObject playerShield;
 
     private AnimationController animationController;
+    Boundary boundary;
+    public float xMin, xMax, zMin, zMax;
 
-	void Start () {
+    void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
 
         //playerShip 
@@ -47,12 +49,10 @@ public class PlayerControl : MonoBehaviour {
         if (shieldPower > 0)
         {
             ActivateShield();
-
         }
         else
         {
             DissactivateShield();
-
         }
     }
 
@@ -71,21 +71,14 @@ public class PlayerControl : MonoBehaviour {
 
         animationController.ShieldLevel(shieldPower);//render shield
         if(shieldActive && shieldPower < 1)
-        {
-            
-            DissactivateShield();
-            
+        {     
+            DissactivateShield();  
         }
         else if (!shieldActive && shieldPower > 0)
         {
             ActivateShield();
-          
         }
-
-
 	}
-
-
 
 	void FixedUpdate () {
 		//Moving using Left Analog
@@ -93,6 +86,12 @@ public class PlayerControl : MonoBehaviour {
 		moveV = input.LV;
 		movement = new Vector3(moveH,0.0f,moveV);
 		rb.velocity = movement * speed;
+
+        rb.position = new Vector3(
+            Mathf.Clamp(rb.position.x, xMin, xMax),
+            0f,
+            Mathf.Clamp(rb.position.z, zMin, zMax)
+        );
 
 		//Rotating using Right Analog
 		rotH = input.RH;
@@ -150,4 +149,10 @@ public class PlayerControl : MonoBehaviour {
         animationController.TurnOn();
 
     }
+}
+
+public class Boundary
+{
+    public float xMin, xMax, zMin, zMax;
+
 }
