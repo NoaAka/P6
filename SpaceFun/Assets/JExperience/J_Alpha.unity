@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -363,6 +363,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1348894683}
   m_RootOrder: 3
+--- !u!1001 &326500777
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410420, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 40dc7d727a63fbd41a5daf182509dff3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &336659538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,19 +2913,8 @@ ParticleSystem:
         rgba: 4283384895
       minMaxState: 2
     startSize:
-      scalar: 0.2
+      scalar: 0.16
       maxCurve:
-        serializedVersion: 2
-        m_Curve:
-        - time: 0
-          value: 0.79999995
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      minCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
@@ -2893,7 +2924,18 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - time: 0
+          value: 0.375
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
       minMaxState: 3
     startRotationX:
       scalar: 1
@@ -4449,7 +4491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &723062207
 Transform:
   m_ObjectHideFlags: 0
@@ -4659,8 +4701,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.91967547, b: 0.86764705, a: 1}
+  m_Intensity: 0.88
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -4679,7 +4721,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.76
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
@@ -6485,7 +6527,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.00000012354
+      value: -14.05
       objectReference: {fileID: 0}
     - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6514,30 +6556,6 @@ Prefab:
     - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.41899082
-      objectReference: {fileID: 0}
-    - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.41899082
-      objectReference: {fileID: 0}
-    - target: {fileID: 492282, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.41899082
-      objectReference: {fileID: 0}
-    - target: {fileID: 452642, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 452642, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 452642, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da418492eafa97b49a40a4d80097d334, type: 2}
@@ -6660,22 +6678,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
---- !u!1 &1786003137 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 165574, guid: da418492eafa97b49a40a4d80097d334, type: 2}
-  m_PrefabInternal: {fileID: 1604657400}
---- !u!65 &1786003138
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1786003137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.69, y: 2.58, z: 5.19}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1844607314
 GameObject:
   m_ObjectHideFlags: 0
