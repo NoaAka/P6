@@ -90,6 +90,7 @@ public class LaserCharge : MonoBehaviour {
 					//line.SetPosition(1, hit.point);
 					//Debug.Log ("Boom!");
 					hit.rigidbody.AddForce (-transform.right * force);
+                    hit.transform.GetComponent<PlayerControl>().shieldPower -= damage;
 					line.SetPosition (1, ray.GetPoint (length));
 				} else {
 					line.SetPosition(1, ray.GetPoint(length));

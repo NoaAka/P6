@@ -4,12 +4,10 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
     public int value;
-    public GameObject model;
     public int charge;
     public int cap;
     public GameObject explosion;
     public Transform boomSpawn;
-    public string name;
     public Rigidbody rb;
     public GameObject player;
     public bool shouldFire = true;
