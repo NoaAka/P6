@@ -4,7 +4,7 @@ using System.IO.Ports;
 
 public class Connection : MonoBehaviour
 {
-
+    public Log log;
 
     public enum ArduinoCom {COM1,COM2,COM3,COM4,COM5,COM6}
     public ArduinoCom port;
@@ -21,7 +21,7 @@ public class Connection : MonoBehaviour
 
         stream.Open(); //Open the Serial Stream.
 
-        StartCoroutine(WaitForSerial());
+        StartCoroutine(SerialUpdate());
 
     }
 
@@ -42,14 +42,16 @@ public class Connection : MonoBehaviour
     }
 
     
-    IEnumerator WaitForSerial()
+    IEnumerator SerialUpdate()
     {
         yield return new WaitForSeconds(1f);
         value = stream.ReadLine(); //Read the information
         //stream.BaseStream.Flush();
-        GSRlog += value + "\r\n";
+        
 
-        StartCoroutine(WaitForSerial());
+        log.GSRUpdate(value);
+
+        StartCoroutine(SerialUpdate());
     }
 
 
