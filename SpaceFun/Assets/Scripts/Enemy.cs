@@ -39,14 +39,21 @@ public class Enemy : MonoBehaviour {
         //simpleSpawner = GameObject.Find("SimpleSpawner").GetComponent<SimpleSpawner>();//JDebug
     }
 
-	public void Death(int points, int intensity, float polarity) {
+	public void Death(float damage, int intensity, bool polarity) {
         //Debug.Log ("Blop");
         //Death
         if (charge > cap) {
-            //Debug.Log("Boom!");
+            Debug.Log(this.name);
 			float intpass = intensity;
-			intensityText.GetComponent<Intensity> ().AddIntensity(intpass*god.intMultiplier*polarity);
-			scoreText.GetComponent<Score> ().AddPoints (points);
+            if (polarity)
+            {
+                intensityText.GetComponent<Intensity>().AddIntensity(intpass * god.revIntMultiplier);
+                scoreText.GetComponent<Score>().AddPoints(intensity);
+
+            }else if (!polarity)
+            {
+                intensityText.GetComponent<Intensity>().AddIntensity(-damage * god.intMultiplier);
+            }
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             GeneratePickup();
@@ -92,14 +99,15 @@ public class Enemy : MonoBehaviour {
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap + 1;
-				Death (0, -value, -1f);
+				Death (damage, value, false);
 			} else {
 				int d = (int) Mathf.Round(damage+damage*god.intMultiplier);
 				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= d;
                 god.shield = (int)hit.gameObject.GetComponent<PlayerControl>().shieldPower;
+
                 Debug.Log (d+" damage on hit");
 				charge = cap + 1;
-				Death (0, -value, -1f);
+				Death (damage, value, false);
 				//Debug.Log ("Damage to " + hit.gameObject.name);
 			}
 		} else if (this.gameObject.name == "EnemyBolt(Clone)") {

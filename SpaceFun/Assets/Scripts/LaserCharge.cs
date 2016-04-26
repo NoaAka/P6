@@ -12,12 +12,14 @@ public class LaserCharge : MonoBehaviour {
 	public int damage = 5;
 	public int force = 500;
 	public bool shouldFire = true;
-	God god;
+	private God god;
+    public GameObject intensityText;
 
-	void Start () {
+    void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
 		god = GameObject.FindWithTag ("GameController").GetComponent<God> ();
-		line = gameObject.GetComponent<LineRenderer> ();
+        intensityText = GameObject.Find("Intensity");
+        line = gameObject.GetComponent<LineRenderer> ();
 		line.enabled = false;
 	}
 	
@@ -91,6 +93,7 @@ public class LaserCharge : MonoBehaviour {
 					hit.rigidbody.AddForce (-transform.right * force);
                     hit.transform.GetComponent<PlayerControl>().shieldPower -= damage;
                     god.shield = hit.transform.GetComponent<PlayerControl>().shieldPower;
+                    intensityText.GetComponent<Intensity>().AddIntensity(-damage * god.intMultiplier);
 
                     line.SetPosition (1, ray.GetPoint (length));
 				} else {

@@ -14,7 +14,7 @@ public class EnemyDrone : Enemy {
 	}
 	
 	void Update () {
-		Death (value, value, 1f);
+		Death (damage, value, true);
 		//Debug.Log (charge);
 		Aim (player);
 		Fire ();
