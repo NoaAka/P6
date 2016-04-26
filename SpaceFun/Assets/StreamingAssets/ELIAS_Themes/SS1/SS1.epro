@@ -1,0 +1,128 @@
+    <theme bars="12" mode="objective" time_signature="4/4" volume="0" tempo="70" channels="2" sample_rate="44100">
+        <defaults>
+            <fade_out maximum="10000" minimum="500"/>
+            <crossfade maximum="250" minimum="50"/>
+            <fade_in maximum="1000" minimum="50"/>
+            <reverb damping="50" size="60" mix="30"/>
+            <agility strict="no" value="4"/>
+            <pickup beats="0"/>
+            <progression mode="random"/>
+        </defaults>
+        <rendezvous>
+            <agility value="4"/>
+            <fade value="75"/>
+        </rendezvous>
+        <audio_loop_track id="1" volume="0" name="Loop Track 1">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/01_1TrombonesEerie(2).ogg" value="1"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="2" volume="-210" name="HeavyDrum">
+            <fade_in maximum="1000" minimum="15"/>
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/02_5BigMarchDrum(2).ogg" value="5"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="3" volume="0" name="Loop Track 3">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/03_1EerieLowBrass(2).ogg" value="1"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="4" volume="0" name="Loop Track 4">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/04_1StringPads(2).ogg" value="1"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="5" volume="689" name="HeaveyR1">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/05_2HeavyGuit(2).ogg" value="2"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="6" volume="0" name="Loop Track 6">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/06_4Bongo(2).ogg" value="3"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="7" volume="0" name="Loop Track 7">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/07_6ViolaStacc(2).ogg" value="7"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="8" volume="0" name="Loop Track 8">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/08_8ViolinIIStacc(2).ogg" value="6"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="9" volume="0" name="Loop Track 9">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/09_12ViolinIStacc(2).ogg" value="12"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="10" volume="0" name="Loop Track 10">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/10_9Drone(2).ogg" value="8"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="11" volume="0" name="Loop Track 11">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/11_12 CymbalSwells(2).ogg" value="12"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="12" volume="-180" name="IndianFlute">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/12_6IndianFlute(2).ogg" value="6"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="13" volume="120" name="IndianDrone">
+            <fade_in maximum="1000" minimum="100"/>
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/13_03IndianDronePl(2).ogg" value="4"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="14" volume="0" name="EerieTrumpets">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/14_10Eerie(2).ogg" value="9"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="15" volume="-380" name="DistGuitR2">
+            <fade_in maximum="1000" minimum="100"/>
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/15_11DistGuitR(2).ogg" value="10"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="16" volume="0" name="DragonEns">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/16_13 DragonEns(2).ogg" value="13"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="17" volume="200" name="MetalClicks">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/17_12MetalClicks(2).ogg" value="12"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="18" volume="0" name="Loop Track 18">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/18_10DoubleBassTremolo(2).ogg" value="11"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="19" volume="0" name="Loop Track 19">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/19_10CelliTremolo(2).ogg" value="11"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="20" volume="0" name="Loop Track 20">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/20_12ElectricMelody(2).ogg" value="12"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="21" volume="200" name="WoodRatchet">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/21_13 WoodRatchet(2).ogg" value="13"/>
+            </key>
+        </audio_loop_track>
+        <audio_loop_track id="22" volume="0" name="Loop Track 22">
+            <key value="0" name="C">
+                <trigger length="3870820" filename="audio/22_14InsectHats(2).ogg" value="14"/>
+            </key>
+        </audio_loop_track>
+    </theme>
