@@ -14,7 +14,7 @@ public class EnemyHugger : Enemy {
 	}
 	
 	void Update () {
-		Death (value, value);
+		Death (value, value, 1f);
 		//Debug.Log (charge);
 		Follow (player);
 	}

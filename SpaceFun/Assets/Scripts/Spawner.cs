@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour {
 
 	//Intensity controls
 	public GameObject intensity;
-	God god;
+	private God god;
 	float counter;
 	public int spawnCount;
 	int d100;
