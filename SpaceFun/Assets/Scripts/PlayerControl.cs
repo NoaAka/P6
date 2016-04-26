@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour {
     private GameObject playerShip;
 
     //playershield
-    public int shieldPower = 50;
+    public float shieldPower = 50f;
     private bool shieldActive;
     private GameObject playerShield;
 
@@ -48,7 +48,7 @@ public class PlayerControl : MonoBehaviour {
         //shield 
         animationController = GetComponentInChildren<AnimationController>();
         playerShield = GameObject.FindGameObjectWithTag("PlayerShield");
-        if (shieldPower > 0)
+        if (shieldPower > 0f)
         {
             ActivateShield();
         }
@@ -71,16 +71,23 @@ public class PlayerControl : MonoBehaviour {
 
         //shield or not
 
-        animationController.ShieldLevel(shieldPower);//render shield
-        if(shieldActive && shieldPower < 1)
+        animationController.ShieldLevel((int)shieldPower);//render shield
+        if(shieldActive && shieldPower < 1f)
         {     
             DissactivateShield();  
         }
-        else if (!shieldActive && shieldPower > 0)
+        else if (!shieldActive && shieldPower > 0f)
         {
             ActivateShield();
         }
-	}
+
+        //Clamp shield
+        if(shieldPower >= 1000f)
+        {
+            shieldPower = 1000f;
+        }
+        god.shield = shieldPower;
+    }
 
 	void FixedUpdate () {
 		//Moving using Left Analog
@@ -109,12 +116,11 @@ public class PlayerControl : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
+        //Pickup
         if (other.gameObject.gameObject.tag == ("Pickup"))
         {
-            //print("Player collided with pickup");
-            shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy;
-            god.shield = (int)shieldPower;
+            shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy*god.revIntMultiplier;
+            god.shield = shieldPower;
             Destroy(other.transform.parent.gameObject);
         }
 		/*

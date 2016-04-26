@@ -45,7 +45,7 @@ public class LaserWheel : MonoBehaviour {
 		back.GetComponent<LaserWheelModule>().shouldFire = masterShouldFire;
 
 		if ((input.RS > 0.2) && masterShouldFire && player.GetComponent<PlayerControl>().shieldPower > 0) {
-			Debug.Log (player.GetComponent<PlayerControl>().shieldPower+" fuel remaining!");
+			//Debug.Log (player.GetComponent<PlayerControl>().shieldPower+" fuel remaining!");
 			player.GetComponent<PlayerControl>().shieldPower--;
 
 
