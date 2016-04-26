@@ -81,7 +81,6 @@ public class LaserCharge : MonoBehaviour {
 		while (shouldFire && this.tag == "EnemyBeam") {
 			Ray ray = new Ray(transform.position, transform.forward);
 			RaycastHit hit;
-			
 			line.SetPosition(0, ray.origin);
 			
 			//Checks if anything blocks the laser
@@ -91,7 +90,9 @@ public class LaserCharge : MonoBehaviour {
 					//Debug.Log ("Boom!");
 					hit.rigidbody.AddForce (-transform.right * force);
                     hit.transform.GetComponent<PlayerControl>().shieldPower -= damage;
-					line.SetPosition (1, ray.GetPoint (length));
+                    god.shield = hit.transform.GetComponent<PlayerControl>().shieldPower;
+
+                    line.SetPosition (1, ray.GetPoint (length));
 				} else {
 					line.SetPosition(1, ray.GetPoint(length));
 				}
@@ -101,8 +102,6 @@ public class LaserCharge : MonoBehaviour {
 				//If laser should go through objects, use only this line
 				line.SetPosition(1, ray.GetPoint(length));
 			}
-			
-			
 			yield return null;
 		}
 		line.enabled = false;

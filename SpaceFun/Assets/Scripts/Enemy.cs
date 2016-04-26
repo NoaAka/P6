@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
     [Range(0.0f, 1.0f)]
     public float pickupSpawnChance;
     public GameObject pickup;
-	God god;
+	private God god;
 
     //private SimpleSpawner simpleSpawner;//JDebug
 
@@ -96,7 +96,8 @@ public class Enemy : MonoBehaviour {
 			} else {
 				int d = (int) Mathf.Round(damage+damage*god.intMultiplier);
 				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= d;
-				Debug.Log (d+" damage on hit");
+                god.shield = (int)hit.gameObject.GetComponent<PlayerControl>().shieldPower;
+                Debug.Log (d+" damage on hit");
 				charge = cap + 1;
 				Death (0, -value);
 				//Debug.Log ("Damage to " + hit.gameObject.name);

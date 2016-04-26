@@ -9,13 +9,14 @@ public class God : MonoBehaviour {
 	public float score = 0f;
 	public float intMultiplier = 0f;
 	public float revIntMultiplier = 0f;
+    public float shield = 0f;
 
 	void Start () {
-		
+
 	}
 
 	void Update () {
-		revIntensity = 400f - intensity;
+        revIntensity = 400f - intensity;
 		delay = revIntensity;
 		if(delay <= 50f){
 			delay = 50f;

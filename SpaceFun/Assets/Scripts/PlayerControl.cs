@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
 	private InputControl input;
+    private God god;
 	public int speed = 4;
 	public Rigidbody rb;
 	public float turnSmooth = 15.0f;
@@ -39,6 +40,7 @@ public class PlayerControl : MonoBehaviour {
 
     void Start () {
 		input = GameObject.FindWithTag ("InputControl").GetComponent<InputControl> ();
+        god = GameObject.FindWithTag("GameController").GetComponent<God>();
 
         //playerShip 
         playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
@@ -112,6 +114,7 @@ public class PlayerControl : MonoBehaviour {
         {
             //print("Player collided with pickup");
             shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy;
+            god.shield = (int)shieldPower;
             Destroy(other.transform.parent.gameObject);
         }
 		/*
