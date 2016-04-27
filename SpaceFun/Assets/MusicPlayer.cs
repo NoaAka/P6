@@ -45,7 +45,16 @@ public class MusicPlayer : MonoBehaviour
     void Update()
     {
 
-        if (start && !startLastClicked)
+        if(!start && !stop && startLastClicked)
+        {
+            start = true;
+        }
+        else if(!start && !stop && !startLastClicked)
+        {
+            stop = true;
+        }
+
+        else if (start && !startLastClicked)
         {
             musicPlayer.StartTheme();
             stop = false;
@@ -68,6 +77,12 @@ public class MusicPlayer : MonoBehaviour
 
 
     }
+    public void setNewIntensityLevel(int intensityLevel)
+    {
+        newIntensityLevel = intensityLevel;
+    }
+
+
 
     // Called when a theme has finished loading.
     public void ThemeLoaded(ref Elias.Theme theme)

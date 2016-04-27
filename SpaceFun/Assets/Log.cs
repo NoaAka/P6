@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Log : MonoBehaviour
 {
-   
+    public God god;
 
-    public int test;
+    
 
     [Tooltip("Update time in seconds")]
     [Range(0.0f, 2.0f)]
@@ -19,8 +19,7 @@ public class Log : MonoBehaviour
     private string gsrData = "";//temp data 
     private string gsrLog = "";
     private float tempTime = 0.0f;
-    public enum TestMode { m0, m1 }
-    public TestMode testMode;
+    
 
     private string timeLog = "";
 
@@ -45,7 +44,7 @@ public class Log : MonoBehaviour
                 {
                     tempTime += updateInterval;
 
-                    intensityLog += Random.Range(0, 20) + "\r\n";//TODO add real intensity! 
+                    intensityLog += god.eliasLevel + "\r\n";
                     //gsrLog += Random.Range(0, 20) + "\r\n";
                     timeLog += Time.time + "\r\n";
                     gsrLog += gsrData + "\r\n";
@@ -71,7 +70,7 @@ public class Log : MonoBehaviour
         System.IO.Directory.CreateDirectory("C:\\SpaceShooterLogs\\");
 
         System.IO.File.WriteAllText("C:\\SpaceShooterLogs\\" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".txt",
-            "Test " + test + "\r\n" + "Test mode " + testMode + "\r\n" + "Time intervals" + "\r\n" + timeLog + "\r\n" + "intensity " + "\r\n" + intensityLog + "\r\n" + "gsr" + "\r\n" + gsrLog);
+            "Test " + god.test + "\r\n" + "Test mode " + god.testMode.ToString() + "\r\n" + "Time intervals" + "\r\n" + timeLog + "\r\n" + "intensity " + "\r\n" + intensityLog + "\r\n" + "gsr" + "\r\n" + gsrLog);
         hasWrittenLogToFile = true;
         print("has written logfile");
     }

@@ -145,7 +145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &86032601
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +665,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &528379269 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11413148, guid: 8cac93a78e1244642bfc4d8f17250cf3,
+    type: 2}
+  m_PrefabInternal: {fileID: 785908492}
+  m_Script: {fileID: 11500000, guid: 5d3e293d9dda10e4d9ad38a28aaedcb6, type: 3}
 --- !u!1 &544031678
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +841,11 @@ MonoBehaviour:
   intMultiplier: 0
   revIntMultiplier: 0
   shield: 0
+  audioLevel: 0
+  eliasLevel: 1
+  musicPlayer: {fileID: 528379269}
+  testMode: 0
+  test: 0
 --- !u!4 &641613251
 Transform:
   m_ObjectHideFlags: 0
@@ -957,6 +968,10 @@ Prefab:
       propertyPath: musicPlayer
       value: 
       objectReference: {fileID: 1928931390}
+    - target: {fileID: 11413148, guid: 8cac93a78e1244642bfc4d8f17250cf3, type: 2}
+      propertyPath: start
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cac93a78e1244642bfc4d8f17250cf3, type: 2}
   m_IsPrefabParent: 0
@@ -1232,23 +1247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463898, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 106158, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
-      propertyPath: m_Name
-      value: Background
-      objectReference: {fileID: 0}
-    - target: {fileID: 414604, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 414604, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 170574, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
@@ -1291,10 +1290,6 @@ Prefab:
     - target: {fileID: 436188, guid: 982d710cdbb1240408fccff2dc129726, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427212, guid: 982d710cdbb1240408fccff2dc129726, type: 2}
-      propertyPath: startThemeOnStart
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 982d710cdbb1240408fccff2dc129726, type: 2}
@@ -1590,10 +1585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781c1f4a86b4ca14a94058f8091e1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
+  god: {fileID: 641613250}
   updateInterval: 1
   log: 0
-  testMode: 0
 --- !u!4 &1417145271
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,7 +1715,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499708049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48cf604fe3d698e458a7ddf045cf78f8, type: 3}
   m_Name: 

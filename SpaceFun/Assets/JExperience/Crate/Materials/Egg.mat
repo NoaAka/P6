@@ -147,17 +147,17 @@ Material:
         second: 0
       data:
         first:
-          name: _Emission
+          name: _InvFade
         second: 1
       data:
         first:
-          name: _InvFade
+          name: _Emission
         second: 1
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 1, g: 0.53676474, b: 0.92971617, a: 1}
+        second: {r: 0.67652464, g: 0.7684436, b: 0.9485294, a: 1}
       data:
         first:
           name: _Color

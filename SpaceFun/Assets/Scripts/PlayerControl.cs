@@ -117,8 +117,9 @@ public class PlayerControl : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         //Pickup
-        if (other.gameObject.gameObject.tag == ("Pickup"))
+        if (other.gameObject.tag == ("Pickup"))
         {
+            //print("pickup!!!! ");
             shieldPower += other.transform.parent.gameObject.GetComponent<Pickup>().energy*god.revIntMultiplier;
             god.shield = shieldPower;
             Destroy(other.transform.parent.gameObject);

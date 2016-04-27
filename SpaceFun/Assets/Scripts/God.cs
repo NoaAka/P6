@@ -12,6 +12,11 @@ public class God : MonoBehaviour {
     public float shield = 0f;
     public float audioLevel = 0f;
     public int eliasLevel = 1; 
+    public MusicPlayer musicPlayer;
+    public enum TestMode { M0,M1} //remember to set this in logfile
+    public TestMode testMode;
+    [Tooltip("Test number")]
+    public int test;
 
 	void Start () {
 
@@ -41,5 +46,23 @@ public class God : MonoBehaviour {
         }
         Debug.Log("Level: " + audioLevel);
         Debug.Log("Elias: " + eliasLevel);
+
+        //update Elias, m1 is reversed! 
+        switch (testMode)
+        {
+            case TestMode.M0 :
+                musicPlayer.setNewIntensityLevel(eliasLevel);
+
+                break;
+
+            case TestMode.M1 :
+                musicPlayer.setNewIntensityLevel(15-eliasLevel);//reverse
+
+                break;
+
+
+        }
+
+
     }
 }

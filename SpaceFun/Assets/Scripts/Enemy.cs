@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour {
     public float rotSpeed = 5f;
 	public float damage = 0f;
 
+    public AudioClip enemyFire;
+    public AudioClip enemyExplosion;
+
     [Range(0.0f, 1.0f)]
     public float pickupSpawnChance;
     public GameObject pickup;
@@ -57,6 +60,7 @@ public class Enemy : MonoBehaviour {
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             GeneratePickup();
+            AudioSource.PlayClipAtPoint(enemyExplosion,transform.position);
 
             //if (transform.gameObject.name.StartsWith("EnemyDrone")) simpleSpawner.SpawnEnemy();//JDebug
         }
@@ -72,6 +76,7 @@ public class Enemy : MonoBehaviour {
         if (Time.time > nextFire && shouldFire) {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            AudioSource.PlayClipAtPoint(enemyFire, transform.position);
         }
     }
 
