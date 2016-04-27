@@ -24,23 +24,31 @@ public class LaserCharge : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		if (shouldFire) {
-			//Debug.Log ("Fire!");
-			StopCoroutine ("FireLaser");
-			StartCoroutine ("FireLaser");
+        if (shouldFire)
+        {
+            //Debug.Log ("Fire!");
+            StopCoroutine("FireLaser");
+            StartCoroutine("FireLaser");
 
-		}
-	}
 
-	IEnumerator FireLaser(){
-		line.enabled = true;
 
-		//Player's beam
-		while ((input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) && shouldFire && this.tag == "PlayerBeam") {
+        }
+        else {  }
+
+    }
+
+    IEnumerator FireLaser(){
+        //line.enabled = true;
+        GetComponent<ParticleSystem>().maxParticles = 0;
+
+        //Player's beam
+        while ((input.RH > 0.2f || input.RV > 0.2 || input.RH < -0.2 || input.RV < -0.2) && shouldFire && this.tag == "PlayerBeam") {
 			Ray ray = new Ray(transform.position, transform.forward);
 			RaycastHit hit;
-			
-			line.SetPosition(0, ray.origin);
+
+            GetComponent<ParticleSystem>().maxParticles = 500;
+
+            line.SetPosition(0, ray.origin);
 			
 			//Checks if anything blocks the laser
 			if(Physics.Raycast (ray, out hit, length)){
