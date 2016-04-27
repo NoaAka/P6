@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3387912}
   - 65: {fileID: 6584470}
   - 23: {fileID: 2392994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 65: {fileID: 6512856}
   - 114: {fileID: 11435832}
   - 114: {fileID: 11444680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBolt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -146,12 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
-  model: {fileID: 0}
   charge: 0
   cap: 0
   explosion: {fileID: 162458, guid: 7279da29bfeedd942a058be592ff8a06, type: 2}
   boomSpawn: {fileID: 0}
-  name: 
   rb: {fileID: 0}
   player: {fileID: 0}
   shouldFire: 1
@@ -164,6 +162,8 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 5
   damage: 20
+  enemyFire: {fileID: 0}
+  enemyExplosion: {fileID: 0}
   pickupSpawnChance: 0
   pickup: {fileID: 0}
 --- !u!114 &11444680
@@ -204,6 +204,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: damage
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

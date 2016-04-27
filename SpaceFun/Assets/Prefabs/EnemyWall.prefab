@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 495440}
   - 114: {fileID: 11453460}
   - 120: {fileID: 12013830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LaserRight
   m_TagString: EnemyBeam
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 418590}
   - 114: {fileID: 11494550}
   - 120: {fileID: 12081668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LaserLeft
   m_TagString: EnemyBeam
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 33: {fileID: 3330506}
   - 135: {fileID: 13538926}
   - 23: {fileID: 2304898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 33: {fileID: 3388424}
   - 65: {fileID: 6501044}
   - 23: {fileID: 2301384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - 4: {fileID: 450892}
   - 33: {fileID: 3364956}
   - 23: {fileID: 2303572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall7_Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - 54: {fileID: 5444936}
   - 65: {fileID: 6568846}
   - 114: {fileID: 11415810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyWall
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - 33: {fileID: 3365280}
   - 65: {fileID: 6524364}
   - 23: {fileID: 2303184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,6 +608,10 @@ Prefab:
       propertyPath: enemyExplosion
       value: 
       objectReference: {fileID: 8300000, guid: f310e8ed8d77c3f4d8647ddefb1b9b8f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175204}

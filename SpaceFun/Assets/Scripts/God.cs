@@ -34,10 +34,12 @@ public class God : MonoBehaviour {
 		revIntMultiplier = revIntensity / 400f;
         //Debug.Log ("RevIntensity: "+revIntMultiplier);
         audioLevel = (int)intensity - 50;
-        if(shield <= 200)
+        
+        if (shield <= 200)
         {
             Debug.Log("Shield: "+shield);
             audioLevel = audioLevel+audioLevel*((200-shield) / 200);
+            
         }
         eliasLevel = (int)audioLevel / 25+1;
         if (eliasLevel > 14)

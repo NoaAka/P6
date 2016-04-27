@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour {
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             GeneratePickup();
-            AudioSource.PlayClipAtPoint(enemyExplosion,transform.position);
+            AudioSource.PlayClipAtPoint(enemyExplosion,transform.position, .2f);
 
             //if (transform.gameObject.name.StartsWith("EnemyDrone")) simpleSpawner.SpawnEnemy();//JDebug
         }
@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour {
         if (Time.time > nextFire && shouldFire) {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            AudioSource.PlayClipAtPoint(enemyFire, transform.position);
+            AudioSource.PlayClipAtPoint(enemyFire, transform.position, .2f);
         }
     }
 

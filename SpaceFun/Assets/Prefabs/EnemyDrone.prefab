@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3326056}
   - 135: {fileID: 13556046}
   - 23: {fileID: 2304326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3398168}
   - 65: {fileID: 6530014}
   - 23: {fileID: 2379620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 466688}
   - 33: {fileID: 3322438}
   - 23: {fileID: 2328684}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - 33: {fileID: 3352654}
   - 65: {fileID: 6576890}
   - 23: {fileID: 2361032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 54: {fileID: 5459976}
   - 114: {fileID: 11477014}
   - 65: {fileID: 6588604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyDrone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -438,6 +438,10 @@ Prefab:
       propertyPath: enemyFire
       value: 
       objectReference: {fileID: 8300000, guid: 86d223af43e12c34b867c346c7c06661, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197446}

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 480492}
   - 33: {fileID: 3314760}
   - 23: {fileID: 2363150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 443130}
   - 33: {fileID: 3360186}
   - 23: {fileID: 2341424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 454016}
   - 33: {fileID: 3303270}
   - 23: {fileID: 2369394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 33: {fileID: 3387402}
   - 135: {fileID: 13579006}
   - 23: {fileID: 2328752}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 4: {fileID: 413828}
   - 33: {fileID: 3333500}
   - 23: {fileID: 2342810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - 33: {fileID: 3354388}
   - 65: {fileID: 6507928}
   - 23: {fileID: 2312430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - 4: {fileID: 450836}
   - 33: {fileID: 3380648}
   - 23: {fileID: 2391090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - 4: {fileID: 450932}
   - 33: {fileID: 3328132}
   - 23: {fileID: 2360620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - 4: {fileID: 415238}
   - 33: {fileID: 3395818}
   - 23: {fileID: 2375564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - 4: {fileID: 435592}
   - 33: {fileID: 3334870}
   - 23: {fileID: 2376260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - 33: {fileID: 3312742}
   - 65: {fileID: 6583090}
   - 23: {fileID: 2377002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - 4: {fileID: 442974}
   - 33: {fileID: 3381544}
   - 23: {fileID: 2399952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hugger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - 4: {fileID: 406478}
   - 33: {fileID: 3342642}
   - 23: {fileID: 2308406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group46341.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - 4: {fileID: 459446}
   - 33: {fileID: 3329012}
   - 23: {fileID: 2383576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - 4: {fileID: 436010}
   - 33: {fileID: 3306394}
   - 23: {fileID: 2385586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - 4: {fileID: 436704}
   - 33: {fileID: 3372738}
   - 23: {fileID: 2389344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - 4: {fileID: 469364}
   - 33: {fileID: 3337352}
   - 23: {fileID: 2333536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - 4: {fileID: 404702}
   - 33: {fileID: 3378986}
   - 23: {fileID: 2334636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - 4: {fileID: 442078}
   - 33: {fileID: 3314154}
   - 23: {fileID: 2361850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - 33: {fileID: 3334380}
   - 65: {fileID: 6586968}
   - 23: {fileID: 2367550}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - 4: {fileID: 437738}
   - 33: {fileID: 3365098}
   - 23: {fileID: 2344674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - 4: {fileID: 416544}
   - 33: {fileID: 3317922}
   - 23: {fileID: 2356708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - 4: {fileID: 470558}
   - 33: {fileID: 3336990}
   - 23: {fileID: 2308560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - 65: {fileID: 6516526}
   - 54: {fileID: 5440642}
   - 114: {fileID: 11476308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyHugger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - 4: {fileID: 452830}
   - 33: {fileID: 3303772}
   - 23: {fileID: 2349838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group46341
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - 4: {fileID: 472866}
   - 33: {fileID: 3356940}
   - 23: {fileID: 2318716}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   - 4: {fileID: 400348}
   - 33: {fileID: 3344620}
   - 23: {fileID: 2380560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - 4: {fileID: 477698}
   - 33: {fileID: 3349786}
   - 23: {fileID: 2362300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - 33: {fileID: 3357620}
   - 65: {fileID: 6517564}
   - 23: {fileID: 2320190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1981,6 +1981,10 @@ Prefab:
       propertyPath: enemyExplosion
       value: 
       objectReference: {fileID: 8300000, guid: f310e8ed8d77c3f4d8647ddefb1b9b8f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169562}
