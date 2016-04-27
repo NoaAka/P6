@@ -99,8 +99,8 @@ public class Enemy : MonoBehaviour {
 	public void OnCollisionEnter(Collision hit){
 		//Debug.Log (hit.gameObject.tag);
 		//Debug.Log (this.gameObject.name);
-		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
-			//Debug.Log ("Working: "+this.gameObject.name);
+		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") || this.gameObject.name == "PlasmaBolt(Clone)" && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
+			Debug.Log ("Working: "+this.gameObject.name);
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap + 1;
