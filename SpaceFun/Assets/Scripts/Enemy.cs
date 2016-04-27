@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour {
         //Debug.Log ("Blop");
         //Death
         if (charge > cap) {
-            Debug.Log(this.name);
+            //Debug.Log(this.name);
 			float intpass = intensity;
             if (polarity)
             {
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour {
 		//Debug.Log (hit.gameObject.tag);
 		//Debug.Log (this.gameObject.name);
 		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") || this.gameObject.name == "PlasmaBolt(Clone)" && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
-			Debug.Log ("Working: "+this.gameObject.name);
+			//Debug.Log ("Working: "+this.gameObject.name);
 			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap + 1;
@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour {
 				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= d;
                 god.shield = (int)hit.gameObject.GetComponent<PlayerControl>().shieldPower;
 
-                Debug.Log (d+" damage on hit");
+                //Debug.Log (d+" damage on hit");
 				charge = cap + 1;
 				Death (damage, value, false);
 				//Debug.Log ("Damage to " + hit.gameObject.name);

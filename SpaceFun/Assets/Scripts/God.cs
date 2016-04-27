@@ -41,13 +41,21 @@ public class God : MonoBehaviour {
             audioLevel = audioLevel+audioLevel*((200-shield) / 200);
             
         }
+        if(audioLevel < 1)
+        {
+            audioLevel = 1;
+        }
         eliasLevel = (int)audioLevel / 25+1;
         if (eliasLevel > 14)
         {
             eliasLevel = 14;
         }
-        Debug.Log("Level: " + audioLevel);
-        Debug.Log("Elias: " + eliasLevel);
+        if(eliasLevel < 1)
+        {
+            eliasLevel = 1;
+        }
+        //Debug.Log("Level: " + audioLevel);
+        //Debug.Log("Elias: " + eliasLevel);
 
         //update Elias, m1 is reversed! 
         switch (testMode)
