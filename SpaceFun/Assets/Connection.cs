@@ -6,8 +6,17 @@ public class Connection : MonoBehaviour
 {
     public Log log;
 
-    public enum ArduinoCom {COM1,COM2,COM3,COM4,COM5,COM6}
+    public enum ArduinoCom { COM1, COM2, COM3, COM4, COM5, COM6 }
     public ArduinoCom port;
+
+    [Tooltip("1 sec recommended for GSR, .1 sec for RTII")]
+    public float updateTime;
+
+    public enum OperationMode { GSR,RTII}
+    public OperationMode operationMode;
+
+    public string tilt;
+    public float rotation;
 
     SerialPort stream = new SerialPort("COM3", 9600); //Set the port (com3) and the baud rate (9600, is standard on most devices)
     string GSRlog = ""; //all data from GSR
@@ -28,7 +37,7 @@ public class Connection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         //print(Time.time + " GSRlog : "+GSRlog +"\r\n");
 
@@ -39,17 +48,42 @@ public class Connection : MonoBehaviour
             stream.BaseStream.Flush(); //Clear the serial information so we assure we get new information.
         }
         */
+
+        
+
+
     }
 
     
     IEnumerator SerialUpdate()
     {
-        yield return new WaitForSeconds(1f);
-        value = stream.ReadLine(); //Read the information
-        //stream.BaseStream.Flush();
+
+
+        switch (operationMode)
+        {
+            case OperationMode.GSR:
+                yield return new WaitForSeconds(updateTime);
+                value = stream.ReadLine(); //Read the information for GSR
+
+                                           //stream.BaseStream.Flush(); //optional
+                log.GSRUpdate(value);
+                break;
+
+            case OperationMode.RTII:
+                yield return new WaitForSeconds(updateTime);
+                value = stream.ReadLine(); //Read the information for GSR
+                //stream.BaseStream.Flush(); //optional
+                string[] vec2 = value.Split(',');
+                print("Tilt : "+ vec2[0]+"Rotation : "+vec2[1]);
+                tilt = vec2[0];
+                rotation = float.Parse(vec2[1]);
+                break;
+
+        }
         
 
-        log.GSRUpdate(value);
+       
+
 
         StartCoroutine(SerialUpdate());
     }
