@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energy: 50
+  rotation: 100
 --- !u!212 &21230078
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -290,6 +291,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: energy
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rotation
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
