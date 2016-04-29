@@ -13,7 +13,7 @@ public class Score : MonoBehaviour {
 		Reset();
 	}
 		
-	public void AddPoints(int points) {
+	public void AddPoints(float points) {
 		god.score += points;
 		myText.text = "Score : "+ god.score.ToString();
 	}

@@ -11,6 +11,7 @@ public class LaserCharge : MonoBehaviour {
 	public int length = 100;
 	public int damage = 5;
 	public int force = 500;
+    public int dMultiplier;
 	public bool shouldFire = true;
 	private God god;
     public GameObject intensityText;
@@ -30,7 +31,7 @@ public class LaserCharge : MonoBehaviour {
             StopCoroutine("FireLaser");
             StartCoroutine("FireLaser");
 
-
+            dMultiplier = (int) god.intMultiplier;
 
         }
         else {  }
@@ -58,20 +59,20 @@ public class LaserCharge : MonoBehaviour {
 					switch (hit.collider.name){
 					case "EnemyDrone(Clone)":
 						//Debug.Log ("Drone Hit");
-						hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage;
+						hit.collider.gameObject.GetComponent<EnemyDrone>().charge+=damage*2+damage*dMultiplier;
 						break;
 					case "EnemyWall(Clone)":
 						//Debug.Log ("Wall Hit");
-						hit.collider.gameObject.GetComponent<EnemyWall>().charge+=damage;
-						break;
+						hit.collider.gameObject.GetComponent<EnemyWall>().charge += damage * 2 + damage * dMultiplier;
+                            break;
 					case "EnemyHugger(Clone)":
 						//Debug.Log ("Hugger Hit");
-						hit.collider.gameObject.GetComponent<EnemyHugger>().charge+=damage;
-						break;
+						hit.collider.gameObject.GetComponent<EnemyHugger>().charge += damage * 2 + damage * dMultiplier;
+                            break;
 					case "Bolt(Clone)":
 						//Debug.Log ("Bolt Hit");
-						hit.collider.gameObject.GetComponent<EnemyBolt>().charge+=damage;
-						break;
+						hit.collider.gameObject.GetComponent<EnemyBolt>().charge += damage * 2 + damage * dMultiplier;
+                            break;
 					}
 
 					//hit.collider.gameObject.GetComponent<EnemyFighter>().charge+=damage;

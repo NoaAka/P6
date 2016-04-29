@@ -51,16 +51,21 @@ public class Enemy : MonoBehaviour {
             if (polarity)
             {
                 intensityText.GetComponent<Intensity>().AddIntensity(intpass * god.revIntMultiplier);
-                scoreText.GetComponent<Score>().AddPoints(intensity);
+                scoreText.GetComponent<Score>().AddPoints(intpass+intpass*2*god.intMultiplier);
 
             }else if (!polarity)
             {
                 intensityText.GetComponent<Intensity>().AddIntensity(-damage * god.intMultiplier);
             }
+            
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             GeneratePickup();
-            AudioSource.PlayClipAtPoint(enemyExplosion,transform.position, .2f);
+            if(enemyExplosion != null)
+            {
+                AudioSource.PlayClipAtPoint(enemyExplosion, transform.position, .2f);
+
+            }
 
             //if (transform.gameObject.name.StartsWith("EnemyDrone")) simpleSpawner.SpawnEnemy();//JDebug
         }
@@ -101,10 +106,11 @@ public class Enemy : MonoBehaviour {
 		//Debug.Log (this.gameObject.name);
 		if ((this.gameObject.name == "EnemyHugger(Clone)" || this.gameObject.name == "EnemyBolt(Clone)") || this.gameObject.name == "PlasmaBolt(Clone)" && (hit.gameObject.tag == "PlayerShip" || hit.gameObject.tag == "PlayerShield" || hit.gameObject.tag == "Player")) {
 			//Debug.Log ("Working: "+this.gameObject.name);
-			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower < 0) {
+			if (hit.gameObject.GetComponent<PlayerControl> ().shieldPower <= 0) {
 				Debug.Log ("Player Lost!");
 				charge = cap + 1;
 				Death (damage, value, false);
+				god.Gameover();
 			} else {
 				int d = (int) Mathf.Round(damage+damage*god.intMultiplier);
 				hit.gameObject.GetComponent<PlayerControl> ().shieldPower -= d;

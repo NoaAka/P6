@@ -66,7 +66,7 @@ public class Log : MonoBehaviour
 
     }
 
-    private void WriteLogToFile()
+    public void WriteLogToFile()
     {
         System.IO.Directory.CreateDirectory("C:\\SpaceShooterLogs\\");
 

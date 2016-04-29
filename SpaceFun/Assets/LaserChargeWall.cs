@@ -102,9 +102,15 @@ public class LaserChargeWall : MonoBehaviour
                 {
                     //line.SetPosition(1, hit.point);
                     //Debug.Log ("Boom!");
+
+                    int d = (int)Mathf.Round(damage + damage * god.intMultiplier);
                     hit.rigidbody.AddForce(-transform.right * force);
-                    hit.transform.GetComponent<PlayerControl>().shieldPower -= damage;
+                    hit.transform.GetComponent<PlayerControl>().shieldPower -= d;
                     god.shield = hit.transform.GetComponent<PlayerControl>().shieldPower;
+                    if (hit.transform.GetComponent<PlayerControl>().shieldPower < 0)
+                    {
+                        god.Gameover();
+                    }
                     intensityText.GetComponent<Intensity>().AddIntensity(-damage * god.intMultiplier);
 
                     line.SetPosition(1, ray.GetPoint(length));

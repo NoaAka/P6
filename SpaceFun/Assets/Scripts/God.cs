@@ -18,8 +18,17 @@ public class God : MonoBehaviour {
     [Tooltip("Test number")]
     public int test;
 
-	void Start () {
+	public GameObject player;
+	public GameObject playerShip;
+    public GameObject gameOverText;
+    public Log log;
 
+
+	void Start () {
+		player = GameObject.FindWithTag ("Player");
+		playerShip = GameObject.FindWithTag ("PlayerShip");
+        gameOverText = GameObject.Find("GameOver");
+        log = GameObject.Find("Log").GetComponent<Log>();
 	}
 
 	void Update () {
@@ -37,7 +46,7 @@ public class God : MonoBehaviour {
         
         if (shield <= 200)
         {
-            Debug.Log("Shield: "+shield);
+            //Debug.Log("Shield: "+shield);
             audioLevel = audioLevel+audioLevel*((200-shield) / 200);
             
         }
@@ -69,10 +78,13 @@ public class God : MonoBehaviour {
                 musicPlayer.setNewIntensityLevel(15-eliasLevel);//reverse
 
                 break;
-
-
         }
-
-
+    }
+    public void Gameover()
+    {
+        log.WriteLogToFile();
+        gameOverText.GetComponent<GameOver>().Toggle(true);
+        Instantiate(player.GetComponent<PlayerControl>().explosion, player.transform.position, player.transform.rotation);
+        Destroy(playerShip);
     }
 }

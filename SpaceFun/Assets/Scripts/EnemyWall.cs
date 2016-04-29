@@ -3,18 +3,20 @@ using System.Collections;
 
 public class EnemyWall : Enemy {
 
-    public GameObject laserRight, laserLeft;
+    public LaserCharge laserRight, laserLeft;
 	
 	new void Start () {
 		base.Start ();
 		cap = 500;
 		value = 20;
+        damage = 2f;
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = -transform.forward;
-        laserRight = transform.FindChild("LaserRight").gameObject;
-        laserLeft = transform.FindChild("LaserLeft").gameObject;
-        laserRight.GetComponent<LaserCharge>().damage = (int) damage;
-        laserLeft.GetComponent<LaserCharge>().damage = (int)damage;
+        laserRight = transform.FindChild("LaserRight").gameObject.GetComponent<LaserCharge>();
+        laserLeft = transform.FindChild("LaserLeft").gameObject.GetComponent<LaserCharge>();
+        //Debug.Log(transform.FindChild("LaserRight").gameObject.name);
+        laserRight.damage = (int)damage;
+        laserLeft.damage = (int)damage;
     }
 	
 	void Update () {

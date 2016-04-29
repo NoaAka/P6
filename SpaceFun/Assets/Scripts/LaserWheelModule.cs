@@ -23,7 +23,7 @@ public class LaserWheelModule : MonoBehaviour {
 		line.enabled = false;
 	}
 
-	//Damagin Ray
+	//Damaging Ray
 	IEnumerator FireLaser(){
 		line.enabled = true;
 
@@ -38,22 +38,22 @@ public class LaserWheelModule : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit, length)) {
 				line.SetPosition (1, hit.point);
 				if (hit.collider.tag == "Enemy") {
-					Debug.Log ("Hit!");
+					//Debug.Log ("Hit!");
 					switch (hit.collider.name) {
 					case "EnemyDrone(Clone)":
-						Debug.Log ("Drone Hit");
+						//Debug.Log ("Drone Hit");
 						hit.collider.gameObject.GetComponent<EnemyDrone> ().charge += damage;
 						break;
 					case "EnemyWall(Clone)":
-						Debug.Log ("Wall Hit");
+						//Debug.Log ("Wall Hit");
 						hit.collider.gameObject.GetComponent<EnemyWall> ().charge += damage;
 						break;
 					case "EnemyHugger(Clone)":
-						Debug.Log ("Hugger Hit");
+						//Debug.Log ("Hugger Hit");
 						hit.collider.gameObject.GetComponent<EnemyHugger> ().charge += damage;
 						break;
 					case "Bolt(Clone)":
-						Debug.Log ("Bolt Hit");
+						//Debug.Log ("Bolt Hit");
 						hit.collider.gameObject.GetComponent<EnemyBolt> ().charge += damage;
 						break;
 					}

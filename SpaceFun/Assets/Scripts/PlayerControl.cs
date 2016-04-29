@@ -21,6 +21,8 @@ public class PlayerControl : MonoBehaviour {
 	Quaternion targetRot;
 	Quaternion finalRot;
 
+    public GameObject explosion;
+
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate = 1f;
@@ -35,7 +37,6 @@ public class PlayerControl : MonoBehaviour {
     private GameObject playerShield;
 
     private AnimationController animationController;
-    Boundary boundary;
     public float xMin, xMax, zMin, zMax;
 
     void Start () {
@@ -159,10 +160,6 @@ public class PlayerControl : MonoBehaviour {
         animationController.TurnOn();
 
     }
+	
 }
 
-public class Boundary
-{
-    public float xMin, xMax, zMin, zMax;
-
-}
