@@ -31,14 +31,13 @@ public class Connection : MonoBehaviour
         stream.Open(); //Open the Serial Stream.
 
         StartCoroutine(SerialUpdate());
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
+        //print("Jada");
         //print(Time.time + " GSRlog : "+GSRlog +"\r\n");
 
         /*
@@ -57,12 +56,14 @@ public class Connection : MonoBehaviour
     
     IEnumerator SerialUpdate()
     {
+        Debug.Log("Serial test");
 
 
+        yield return new WaitForSeconds(updateTime);
         switch (operationMode)
         {
             case OperationMode.GSR:
-                yield return new WaitForSeconds(updateTime);
+                print("GSR mode");
                 value = stream.ReadLine(); //Read the information for GSR
 
                                            //stream.BaseStream.Flush(); //optional
@@ -70,13 +71,17 @@ public class Connection : MonoBehaviour
                 break;
 
             case OperationMode.RTII:
-                yield return new WaitForSeconds(updateTime);
+                print("RTII mode");
                 value = stream.ReadLine(); //Read the information for GSR
                 //stream.BaseStream.Flush(); //optional
                 string[] vec2 = value.Split(',');
-                print("Tilt : "+ vec2[0]+"Rotation : "+vec2[1]);
-                tilt = vec2[0];
-                rotation = float.Parse(vec2[1]);
+                if (vec2.Length > 1)
+                {
+                    print("Tilt : " + vec2[0] + ", Rotation : " + vec2[1]);
+                    tilt = vec2[0];
+                    rotation = float.Parse(vec2[1]);
+                }
+               
                 break;
 
         }

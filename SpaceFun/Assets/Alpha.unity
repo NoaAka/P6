@@ -366,6 +366,10 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11418418, guid: 12641545f98d29b4f8dc0df459188b27, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12641545f98d29b4f8dc0df459188b27, type: 2}
   m_IsPrefabParent: 0
@@ -641,7 +645,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 380655130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd0da3760d1f6f3408c04882d15925da, type: 3}
   m_Name: 
@@ -1268,6 +1272,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 463898, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5012088
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fffbac02f6cf69644a22f824a01787f9, type: 2}
   m_IsPrefabParent: 0
@@ -1693,6 +1701,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1745,9 +1754,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   log: {fileID: 1417145270}
-  port: 5
-  updateTime: 0.1
-  operationMode: 0
+  port: 4
+  updateTime: 0.15
+  operationMode: 1
   tilt: 
   rotation: 0
 --- !u!4 &1499708051
@@ -1934,6 +1943,36 @@ MonoBehaviour:
 --- !u!1 &1752898744 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141856, guid: 12641545f98d29b4f8dc0df459188b27, type: 2}
+  m_PrefabInternal: {fileID: 221526235}
+--- !u!114 &1752898745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1752898744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a704fbee759d1944b10d963594aa0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  rb: {fileID: 1752898746}
+  turnSmooth: 15
+  shouldFire: 1
+  explosion: {fileID: 177726, guid: 07b811b1ae8fdd642ae2ccf56d3cdcde, type: 2}
+  connection: {fileID: 0}
+  shot: {fileID: 0}
+  shotSpawn: {fileID: 0}
+  fireRate: 1
+  shieldPower: 4280000
+  xMin: -14
+  xMax: 14
+  zMin: -12
+  zMax: 3
+--- !u!54 &1752898746 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 5414238, guid: 12641545f98d29b4f8dc0df459188b27,
+    type: 2}
   m_PrefabInternal: {fileID: 221526235}
 --- !u!1 &1778096363
 GameObject:

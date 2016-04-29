@@ -48,7 +48,7 @@ public class Log : MonoBehaviour
                     //gsrLog += Random.Range(0, 20) + "\r\n";
                     timeLog += Time.time + "\r\n";
                     gsrLog += gsrData + "\r\n";
-                    print(gsrData);
+                    //print(gsrData);
                 }
                 break;
 
