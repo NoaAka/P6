@@ -7,7 +7,7 @@ public class Connection : MonoBehaviour
     public Log log;
 
     public enum ArduinoCom { COM1, COM2, COM3, COM4, COM5, COM6 }
-    public ArduinoCom port;
+    public ArduinoCom po    rt;
 
     [Tooltip("1 sec recommended for GSR, .1 sec for RTII")]
     public float updateTime;
