@@ -649,7 +649,7 @@ MonoBehaviour:
   drone: {fileID: 197446, guid: ba08676247c348748b7c87d103546543, type: 2}
   wall: {fileID: 175204, guid: 23642a1c4c9b51046bef9f86af0b86e7, type: 2}
   hugger: {fileID: 169562, guid: b213681d75fce2649899e490c9465726, type: 2}
-  spawnValues: {x: 0, y: 0, z: 8}
+  spawnValues: {x: 0, y: 0, z: 0}
   shouldSpawn: 1
   intensity: {fileID: 0}
   spawnCount: 0
@@ -665,12 +665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!114 &528379269 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11413148, guid: 8cac93a78e1244642bfc4d8f17250cf3,
-    type: 2}
-  m_PrefabInternal: {fileID: 785908492}
-  m_Script: {fileID: 11500000, guid: 5d3e293d9dda10e4d9ad38a28aaedcb6, type: 3}
 --- !u!1 &544031678
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,15 +792,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 200
-  masterLength: 6
+  masterLength: 7
   masterForce: 5
-  masterDamage: 30
+  masterDamage: 40
   masterShouldFire: 1
   left: {fileID: 370157146}
   right: {fileID: 544031678}
   front: {fileID: 1274485086}
   back: {fileID: 787458611}
-  player: {fileID: 1752898744}
+  player: {fileID: 0}
 --- !u!1 &641613249
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,21 +828,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcdae2af70cec842bc6e03cd4a4b602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 0
+  intensity: 50
   revIntensity: 0
-  delay: 500
+  delay: 400
   score: 0
   intMultiplier: 0
   revIntMultiplier: 0
   shield: 0
   audioLevel: 0
   eliasLevel: 1
-  musicPlayer: {fileID: 528379269}
+  musicPlayer: {fileID: 0}
   testMode: 0
-  test: 13
-  player: {fileID: 0}
-  playerShip: {fileID: 0}
-  gameOverText: {fileID: 0}
+  test: 0
+  player: {fileID: 1752898744}
+  playerShip: {fileID: 2040125895}
+  gameOverText: {fileID: 1709060028}
   log: {fileID: 0}
 --- !u!4 &641613251
 Transform:
@@ -1608,8 +1602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781c1f4a86b4ca14a94058f8091e1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  god: {fileID: 641613250}
-  updateInterval: 1
+  god: {fileID: 0}
+  updateInterval: 0
   log: 0
 --- !u!4 &1417145271
 Transform:
@@ -1693,6 +1687,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1717,51 +1712,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1499708049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1499708051}
-  - 114: {fileID: 1499708050}
-  m_Layer: 0
-  m_Name: Connection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1499708050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1499708049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48cf604fe3d698e458a7ddf045cf78f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  log: {fileID: 1417145270}
-  port: 5
-  updateTime: 0.1
-  operationMode: 0
-  tilt: 
-  rotation: 0
---- !u!4 &1499708051
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1499708049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
 --- !u!1 &1667671152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2054,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
+--- !u!1 &2040125895 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 161370, guid: 12641545f98d29b4f8dc0df459188b27, type: 2}
+  m_PrefabInternal: {fileID: 221526235}
 --- !u!1 &2095671110
 GameObject:
   m_ObjectHideFlags: 0
